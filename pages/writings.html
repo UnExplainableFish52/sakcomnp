@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Saksham Sharma - Personal Writings and Blog Posts">
+    <meta name="keywords" content="Saksham Sharma, Blog, Writings, Thoughts, Personal">
+    <meta name="author" content="Saksham Sharma">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sakshamsharma.com.np/pages/writings.html">
+    
+    <title>Writings - Saksham's Personal Space</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #5F9EA0;  /* Beautiful teal */
+            --accent-color: #E6E6FA;   /* Lavender */
+            --highlight-color: #00CED1; /* Cyan */
+            --bg-color: #1a1a1a;
+            --text-color: #ffffff;
+            --secondary-bg: #2a2a2a;
+            --transition: all 0.3s ease;
+        }
+
+        /* Light theme variables */
+        [data-theme="light"] {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --secondary-bg: #f5f5f5;
+        }
+
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto Slab', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            cursor: default;
+            font-weight: 300; /* Lighter font weight for the writings page */
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.3rem 2rem;
+            background-color: var(--secondary-bg);
+            border-bottom: 1px solid var(--highlight-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: auto;
+        }
+
+        .nav-brand a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 0.3rem;
+            margin-left: 1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-menu-header {
+            display: none;
+        }
+
+        .nav-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+            padding-bottom: 2px;
+            font-size: 0.95rem;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--highlight-color);
+            transition: width 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+            box-shadow: 0 0 8px var(--highlight-color);
+        }
+
+        /* Theme toggle */
+        .theme-toggle {
+            cursor: pointer;
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+        }
+
+        /* Content Styles */
+        .content {
+            min-height: calc(100vh - 150px);
+            padding: 2.5rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            color: var(--highlight-color);
+            margin-bottom: 0.5rem;
+            font-weight: 400; /* Lighter font weight */
+        }
+
+        .page-description {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300; /* Lighter font weight */
+        }
+
+        /* Article Grid */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .article-card {
+            background-color: var(--secondary-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--highlight-color);
+            font-weight: 400; /* Lighter font weight */
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--accent-color);
+        }
+
+        .article-date, .article-category {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-excerpt {
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+            flex-grow: 1;
+            font-weight: 300; /* Lighter font weight */
+        }
+
+        .article-link {
+            align-self: flex-start;
+            padding: 0.5rem 1rem;
+            background-color: rgba(95, 158, 160, 0.1);
+            color: var(--accent-color);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .article-link:hover {
+            background-color: rgba(95, 158, 160, 0.2);
+            color: var(--highlight-color);
+        }
+
+        /* Featured writings section */
+        .featured-writings {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(95, 158, 160, 0.2);
+            text-align: center;
+        }
+
+        /* Category Filters */
+        .category-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        .category-filter {
+            padding: 0.4rem 1rem;
+            background-color: rgba(95, 158, 160, 0.1);
+            color: var(--accent-color);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            border: none;
+        }
+
+        .category-filter:hover, .category-filter.active {
+            background-color: rgba(95, 158, 160, 0.3);
+            color: var(--highlight-color);
+        }
+
+        /* Footer Styles */
+        .footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: var(--secondary-bg);
+            margin-top: 0.5rem;
+        }
+
+        .footer-content {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 0 4rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .nav-brand {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                align-items: center;
+                background-color: var(--secondary-bg);
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease, padding 0.4s ease;
+                z-index: 10;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                opacity: 0;
+            }
+            
+            .nav-links.active {
+                max-height: 300px;
+                padding: 1rem 0;
+                opacity: 1;
+            }
+            
+            .nav-menu-header {
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: 0.5rem 0;
+                border-bottom: 1px solid rgba(95, 158, 160, 0.2);
+                margin-bottom: 0.5rem;
+            }
+            
+            .nav-menu-title {
+                font-size: 1.2rem;
+                color: var(--highlight-color);
+            }
+            
+            .nav-link {
+                width: 100%;
+                text-align: center;
+                padding: 0.8rem 0;
+                border-bottom: 1px solid rgba(95, 158, 160, 0.1);
+            }
+            
+            .nav-link:last-child {
+                border-bottom: none;
+            }
+            
+            .nav-link::after {
+                bottom: 5px;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="../index.html"><h2>Saksham's Personal Space</h2></a>
+            <span id="theme-toggle" class="theme-toggle"><i class="fas fa-sun"></i></span>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="nav-links">
+            <div class="nav-menu-header">
+                <h2 class="nav-menu-title">Navigate To:</h2>
+            </div>
+            <a href="../index.html" class="nav-link">Home</a>
+            <a href="hobbies.html" class="nav-link">Hobbies</a>
+            <a href="thoughts.html" class="nav-link">Thoughts</a>
+            <a href="gallery.html" class="nav-link">Gallery</a>
+            <a href="quotes.html" class="nav-link">Quotes</a>
+            <a href="writings.html" class="nav-link active">Writings</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+        <header class="page-header">
+            <h1 class="page-title">My Writings</h1>
+            <p class="page-description">A collection of my thoughts, stories, and reflections on various topics that interest me.</p>
+        </header>
+
+        <!-- Featured Philosophical Essays Section -->
+        <section class="featured-writings">
+            <h2 class="section-title">Featured Philosophical Essays</h2>
+            <div class="articles-grid">
+                <!-- Philosophy Article -->
+                <article class="article-card">
+                    <img src="../images/writing1.jpg" alt="Philosophy" class="article-image">
+                    <div class="article-content">
+                        <h2 class="article-title">What is Philosophy?</h2>
+                        <div class="article-meta">
+                            <span class="article-date"><i class="far fa-calendar-alt"></i> Mar 15, 2025</span>
+                            <span class="article-category"><i class="fas fa-tag"></i> Philosophy</span>
+                        </div>
+                        <p class="article-excerpt">Exploring the nature of philosophical inquiry and its relevance to life as an international student navigating different cultural contexts.</p>
+                        <a href="writings/writing1.html" class="article-link">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Life Article -->
+                <article class="article-card">
+                    <img src="../images/writing2.jpg" alt="Life" class="article-image">
+                    <div class="article-content">
+                        <h2 class="article-title">What is Life? How to Live Before You Die?</h2>
+                        <div class="article-meta">
+                            <span class="article-date"><i class="far fa-calendar-alt"></i> Mar 10, 2025</span>
+                            <span class="article-category"><i class="fas fa-tag"></i> Life</span>
+                        </div>
+                        <p class="article-excerpt">Reflections on the meaning of life and how to live authentically, cultivate meaningful relationships, and contribute something meaningful to the world.</p>
+                        <a href="writings/writing2.html" class="article-link">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Humanity Article -->
+                <article class="article-card">
+                    <img src="../images/writing3.jpg" alt="Humanity" class="article-image">
+                    <div class="article-content">
+                        <h2 class="article-title">What is Humanity and How Did We Come Here?</h2>
+                        <div class="article-meta">
+                            <span class="article-date"><i class="far fa-calendar-alt"></i> Mar 5, 2025</span>
+                            <span class="article-category"><i class="fas fa-tag"></i> Humanity</span>
+                        </div>
+                        <p class="article-excerpt">Exploring the journey of humanity through history, from our evolutionary origins to our current technological civilization, and contemplating possible futures.</p>
+                        <a href="writings/writing3.html" class="article-link">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Category Filters -->
+        <div class="category-filters">
+            <button class="category-filter active" data-category="all">All</button>
+            <button class="category-filter" data-category="Technology">Technology</button>
+            <button class="category-filter" data-category="Philosophy">Philosophy</button>
+            <button class="category-filter" data-category="Anime">Anime</button>
+            <button class="category-filter" data-category="Life">Life</button>
+            <button class="category-filter" data-category="Humanity">Humanity</button>
+            <button class="category-filter" data-category="Personal">Personal</button>
+        </div>
+
+        <!-- All Articles Grid -->
+        <div class="articles-grid">
+            <!-- Philosophy Article -->
+            <article class="article-card" data-category="Philosophy">
+                <img src="../images/writing1.jpg" alt="Philosophy" class="article-image">
+                <div class="article-content">
+                    <h2 class="article-title">What is Philosophy?</h2>
+                    <div class="article-meta">
+                        <span class="article-date"><i class="far fa-calendar-alt"></i> Mar 15, 2025</span>
+                        <span class="article-category"><i class="fas fa-tag"></i> Philosophy</span>
+                    </div>
+                    <p class="article-excerpt">Exploring the nature of philosophical inquiry and its relevance to life as an international student navigating different cultural contexts.</p>
+                    <a href="writings/writing1.html" class="article-link">Read More</a>
+                </div>
+            </article>
+
+            <!-- Life Article -->
+            <article class="article-card" data-category="Life">
+                <img src="../images/writing2.jpg" alt="Life" class="article-image">
+                <div class="article-content">
+                    <h2 class="article-title">What is Life? How to Live Before You Die?</h2>
+                    <div class="article-meta">
+                        <span class="article-date"><i class="far fa-calendar-alt"></i> Mar 10, 2025</span>
+                        <span class="article-category"><i class="fas fa-tag"></i> Life</span>
+                    </div>
+                    <p class="article-excerpt">Reflections on the meaning of life and how to live authentically, cultivate meaningful relationships, and contribute something meaningful to the world.</p>
+                    <a href="writings/writing2.html" class="article-link">Read More</a>
+                </div>
+            </article>
+
+            <!-- Humanity Article -->
+            <article class="article-card" data-category="Humanity">
+                <img src="../images/writing3.jpg" alt="Humanity" class="article-image">
+                <div class="article-content">
+                    <h2 class="article-title">What is Humanity and How Did We Come Here?</h2>
+                    <div class="article-meta">
+                        <span class="article-date"><i class="far fa-calendar-alt"></i> Mar 5, 2025</span>
+                        <span class="article-category"><i class="fas fa-tag"></i> Humanity</span>
+                    </div>
+                    <p class="article-excerpt">Exploring the journey of humanity through history, from our evolutionary origins to our current technological civilization, and contemplating possible futures.</p>
+                    <a href="writings/writing3.html" class="article-link">Read More</a>
+                </div>
+            </article>
+
+            <!-- Anime Article -->
+            <article class="article-card" data-category="Anime">
+                <img src="../images/anime-article.jpg" alt="Anime Article" class="article-image">
+                <div class="article-content">
+                    <h2 class="article-title">The Hidden Messages in Anime</h2>
+                    <div class="article-meta">
+                        <span class="article-date"><i class="far fa-calendar-alt"></i> Feb 25, 2025</span>
+                        <span class="article-category"><i class="fas fa-tag"></i> Anime</span>
+                    </div>
+                    <p class="article-excerpt">An exploration of philosophical and psychological messages hidden within popular anime series and their impact on viewers.</p>
+                    <a href="#" class="article-link">Coming Soon</a>
+                </div>
+            </article>
+
+            <!-- Technology Article -->
+            <article class="article-card" data-category="Technology">
+                <img src="../images/ai-article.jpg" alt="AI Article" class="article-image">
+                <div class="article-content">
+                    <h2 class="article-title">AI: Friend or Foe?</h2>
+                    <div class="article-meta">
+                        <span class="article-date"><i class="far fa-calendar-alt"></i> Feb 20, 2025</span>
+                        <span class="article-category"><i class="fas fa-tag"></i> Technology</span>
+                    </div>
+                    <p class="article-excerpt">Examining the ethical implications of artificial intelligence and its potential impact on our society and future generations.</p>
+                    <a href="#" class="article-link">Coming Soon</a>
+                </div>
+            </article>
+
+            <!-- Philosophy Article -->
+            <article class="article-card" data-category="Philosophy">
+                <img src="../images/mindfulness.jpg" alt="Mindfulness Article" class="article-image">
+                <div class="article-content">
+                    <h2 class="article-title">The Art of Mindfulness</h2>
+                    <div class="article-meta">
+                        <span class="article-date"><i class="far fa-calendar-alt"></i> Feb 15, 2025</span>
+                        <span class="article-category"><i class="fas fa-tag"></i> Philosophy</span>
+                    </div>
+                    <p class="article-excerpt">How practicing mindfulness has transformed my perspective on life, work, and relationships, with practical tips for beginners.</p>
+                    <a href="#" class="article-link">Coming Soon</a>
+                </div>
+            </article>
+
+            <!-- Personal Article -->
+            <article class="article-card" data-category="Personal">
+                <img src="../images/programming.jpg" alt="Programming Article" class="article-image">
+                <div class="article-content">
+                    <h2 class="article-title">My Journey into Programming</h2>
+                    <div class="article-meta">
+                        <span class="article-date"><i class="far fa-calendar-alt"></i> Jan 30, 2025</span>
+                        <span class="article-category"><i class="fas fa-tag"></i> Personal</span>
+                    </div>
+                    <p class="article-excerpt">Reflecting on my path from a curious student to a passionate programmer, with lessons learned along the way.</p>
+                    <a href="#" class="article-link">Coming Soon</a>
+                </div>
+            </article>
+
+            <!-- Technology Article -->
+            <article class="article-card" data-category="Technology">
+                <img src="../images/digital-minimalism.jpg" alt="Digital Minimalism Article" class="article-image">
+                <div class="article-content">
+                    <h2 class="article-title">Digital Minimalism</h2>
+                    <div class="article-meta">
+                        <span class="article-date"><i class="far fa-calendar-alt"></i> Jan 15, 2025</span>
+                        <span class="article-category"><i class="fas fa-tag"></i> Technology</span>
+                    </div>
+                    <p class="article-excerpt">Exploring the concept of digital minimalism and how it can help us maintain focus and improve well-being in a distracted world.</p>
+                    <a href="#" class="article-link">Coming Soon</a>
+                </div>
+            </article>
+
+            <!-- Philosophy Article -->
+            <article class="article-card" data-category="Philosophy">
+                <img src="../images/music-philosophy.jpg" alt="Music Philosophy Article" class="article-image">
+                <div class="article-content">
+                    <h2 class="article-title">Philosophy of Music</h2>
+                    <div class="article-meta">
+                        <span class="article-date"><i class="far fa-calendar-alt"></i> Dec 20, 2024</span>
+                        <span class="article-category"><i class="fas fa-tag"></i> Philosophy</span>
+                    </div>
+                    <p class="article-excerpt">A deep dive into how music shapes our emotions, perceptions, and even our sense of identity and belonging.</p>
+                    <a href="#" class="article-link">Coming Soon</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Elfsight Subscription Form | Untitled Subscription Form -->
+            <script src="https://static.elfsight.com/platform/platform.js" async></script>
+            <div class="elfsight-app-a3279f79-5e02-425b-a8f4-ff12ecfbb964" data-elfsight-app-lazy></div>
+            <p>&copy; 2025 Saksham Sharma | All rights reserved.</p>
+            <p><small>Visit my <a href="https://saksham.info.np" style="color: var(--highlight-color);">professional website</a></small></p>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle and Filter Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Theme Toggle
+            const themeToggle = document.getElementById('theme-toggle');
+            const iconElement = themeToggle.querySelector('i');
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            // Check if user previously set a theme preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.body.setAttribute('data-theme', savedTheme);
+                updateIcon(savedTheme === 'light', iconElement);
+            }
+            
+            // Toggle theme when clicked
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = document.body.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? '' : 'light';
+                
+                document.body.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                updateIcon(newTheme === 'light', iconElement);
+            });
+            
+            // Function to update icon based on theme
+            function updateIcon(isLight, icon) {
+                if (isLight) {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                } else {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                }
+            }
+            
+            // Category Filters
+            const filterButtons = document.querySelectorAll('.category-filter');
+            const articles = document.querySelectorAll('.article-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-category');
+                    
+                    // Show all articles if 'all' is selected
+                    if (category === 'all') {
+                        articles.forEach(article => {
+                            article.style.display = 'block';
+                        });
+                    } else {
+                        // Filter articles by category
+                        articles.forEach(article => {
+                            const articleCategory = article.querySelector('.article-category').textContent.split(' ')[1];
+                            
+                            if (articleCategory === category) {
+                                article.style.display = 'block';
+                            } else {
+                                article.style.display = 'none';
+                            }
+                        });
+                    }
+                });
+            });
+            
+            // Mobile menu toggle functionality
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    navLinks.classList.toggle('active');
+                    
+                    const icon = mobileMenuToggle.querySelector('i');
+                    if (icon.classList.contains('fa-bars')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    const isClickInsideNav = navLinks.contains(event.target);
+                    const isClickOnToggle = mobileMenuToggle.contains(event.target);
+                    
+                    if (!isClickInsideNav && !isClickOnToggle && navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        const icon = mobileMenuToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+                
+                // Close menu when clicking on a link
+                navLinks.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.remove('active');
+                        const icon = mobileMenuToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

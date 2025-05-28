@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="What is life? How to live before you die? - A personal perspective on the meaning of life">
+    <meta name="keywords" content="Saksham Sharma, Life, Philosophy, Meaning, International Student, Nepal">
+    <meta name="author" content="Saksham Sharma">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sakshamsharma.com.np/pages/writings/writing2.html">
+    
+    <title>What is Life? - Saksham's Personal Space</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #5F9EA0;  /* Beautiful teal */
+            --accent-color: #E6E6FA;   /* Lavender */
+            --highlight-color: #00CED1; /* Cyan */
+            --bg-color: #1a1a1a;
+            --text-color: #ffffff;
+            --secondary-bg: #2a2a2a;
+            --transition: all 0.3s ease;
+        }
+
+        /* Light theme variables */
+        [data-theme="light"] {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --secondary-bg: #f5f5f5;
+        }
+
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto Slab', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            cursor: default;
+            font-weight: 300; /* Lighter font weight for the writings page */
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.3rem 2rem;
+            background-color: var(--secondary-bg);
+            border-bottom: 1px solid var(--highlight-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: auto;
+        }
+
+        .nav-brand a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 0.3rem;
+            margin-left: 1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-menu-header {
+            display: none;
+        }
+
+        .nav-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+            padding-bottom: 2px;
+            font-size: 0.95rem;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--highlight-color);
+            transition: width 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+            box-shadow: 0 0 8px var(--highlight-color);
+        }
+
+        /* Theme toggle */
+        .theme-toggle {
+            cursor: pointer;
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+        }
+
+        /* Content Styles */
+        .content {
+            min-height: calc(100vh - 150px);
+            padding: 2.5rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Article Container */
+        .article-container {
+            background-color: var(--secondary-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        /* Article Header */
+        .article-header {
+            padding: 2rem;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            border-bottom: 1px solid var(--primary-color);
+        }
+
+        .article-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .article-header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--highlight-color);
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+        }
+
+        /* Article Body */
+        .article-body {
+            padding: 2rem;
+            line-height: 1.8;
+        }
+
+        .article-body p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .article-body h2 {
+            color: var(--primary-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .article-body h3 {
+            color: var(--highlight-color);
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+
+        .article-body ul, .article-body ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-body blockquote {
+            border-left: 3px solid var(--primary-color);
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: var(--accent-color);
+        }
+
+        /* Article Tags */
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 2.5rem;
+        }
+
+        .article-tag {
+            background-color: rgba(95, 158, 160, 0.15);
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .article-tag:hover {
+            background-color: rgba(95, 158, 160, 0.3);
+        }
+
+        /* Article Navigation */
+        .article-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(95, 158, 160, 0.2);
+        }
+
+        .nav-previous, .nav-next, .nav-back {
+            color: var(--accent-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            background-color: rgba(95, 158, 160, 0.1);
+        }
+
+        .nav-previous:hover, .nav-next:hover, .nav-back:hover {
+            background-color: rgba(95, 158, 160, 0.2);
+            color: var(--highlight-color);
+        }
+
+        /* Footer Styles */
+        .footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: var(--secondary-bg);
+            margin-top: 0.5rem;
+        }
+
+        .footer-content {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 0 4rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .nav-brand {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                align-items: center;
+                background-color: var(--secondary-bg);
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease, padding 0.4s ease;
+                z-index: 10;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                opacity: 0;
+            }
+            
+            .nav-links.active {
+                max-height: 500px;
+                padding: 1rem 0;
+                opacity: 1;
+            }
+            
+            .nav-menu-header {
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: 0.5rem 0;
+                border-bottom: 1px solid rgba(95, 158, 160, 0.2);
+                margin-bottom: 0.5rem;
+            }
+            
+            .nav-menu-title {
+                font-size: 1.2rem;
+                color: var(--highlight-color);
+            }
+            
+            .nav-link {
+                width: 100%;
+                text-align: center;
+                padding: 0.8rem 0;
+                border-bottom: 1px solid rgba(95, 158, 160, 0.1);
+            }
+            
+            .nav-link:last-child {
+                border-bottom: none;
+            }
+            
+            .nav-link::after {
+                bottom: 5px;
+            }
+
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .article-meta {
+                gap: 1rem;
+            }
+            
+            .article-body {
+                padding: 1.5rem;
+            }
+            
+            .article-navigation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-previous, .nav-next, .nav-back {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="../../index.html"><h2>Saksham's Personal Space</h2></a>
+            <span id="theme-toggle" class="theme-toggle"><i class="fas fa-sun"></i></span>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="nav-links">
+            <div class="nav-menu-header">
+                <h2 class="nav-menu-title">Navigate To:</h2>
+            </div>
+            <a href="../../index.html" class="nav-link">Home</a>
+            <a href="../hobbies.html" class="nav-link">Hobbies</a>
+            <a href="../thoughts.html" class="nav-link">Thoughts</a>
+            <a href="../gallery.html" class="nav-link">Gallery</a>
+            <a href="../quotes.html" class="nav-link">Quotes</a>
+            <a href="../writings.html" class="nav-link active">Writings</a>
+            <a href="../contact.html" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+        <article class="article-container">
+            <!-- Article Header -->
+            <div class="article-header" style="background-image: url('../../images/writing2.jpg');">
+                <div class="article-header-content">
+                    <h1 class="article-title">What is Life? How to Live Before You Die?</h1>
+                    <div class="article-meta">
+                        <span><i class="far fa-calendar-alt"></i> Mar 10, 2025</span>
+                        <span><i class="fas fa-heartbeat"></i> Life</span>
+                        <span><i class="far fa-clock"></i> 7 min read</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article Body -->
+            <div class="article-body">
+                <p>Lifeu2014a simple four-letter word that carries infinite complexity. As an international student far from home, I've often found myself contemplating this question during quiet moments between classes or on sleepless nights in my dormitory. What exactly is this phenomenon we call life, and how should we navigate our brief time in this vast universe?</p>
+                
+                <p>The question "What is life?" has been pondered by philosophers, scientists, theologians, and ordinary people throughout human history. And yet, despite our technological advances and intellectual progress, we seem no closer to a universal answer than our ancestors were thousands of years ago.</p>
+                
+                <h2>The Biological Answer vs. The Existential Question</h2>
+                
+                <p>From a scientific perspective, life is often defined as a characteristic that distinguishes physical entities that have biological processes from those that do not. These processes include the capacity for growth, reproduction, functional activity, and continual change preceding death. But this clinical definition feels woefully inadequate when we attempt to capture the richness of human experience.</p>
+                
+                <p>As a student of both science and humanities, I find myself caught between these two approaches to understanding life. The biological definition describes the mechanics, but it fails to address the meaning. It's like defining a symphony as merely the vibration of air molecules or a painting as simply pigments arranged on canvasu2014technically correct, but missing the essence entirely.</p>
+                
+                <blockquote>
+                   "Life is not measured by the number of breaths we take, but by the moments that take our breath away." <br> - Maya Angelou
+                </blockquote>
+                
+                <h2>The Search for Meaning</h2>
+                
+                <p>Viktor Frankl, a psychiatrist who survived the Nazi concentration camps, developed an approach called logotherapy based on the idea that the primary motivational force in humans is the search for meaning. In his powerful book, "Man's Search for Meaning," he argues that even in the most dehumanizing conditions, those who could find meaning in their suffering were more likely to survive.</p>
+                
+                <p>This resonates deeply with me. Coming to study in a foreign country has involved significant sacrifices and challenges. There are days when homesickness feels overwhelming, when cultural differences create barriers, when academic pressure seems insurmountable. On those days, what keeps me going is not just resilience or determination, but a sense of purposeu2014a belief that these struggles are meaningful because they are part of a larger journey toward growth and contribution.</p>
+                
+                <h2>Life as a Series of Choices</h2>
+                
+                <p>Perhaps life is best understood not as a static entity but as a dynamic process of choice-making. Every day, we make hundreds of decisions, from the mundane (what to eat for breakfast) to the profound (what values to live by). These choices, cumulatively, shape the narrative of our lives.</p>
+                
+                <p>The existentialist philosophers like Jean-Paul Sartre emphasized this aspect of life. "We are our choices," Sartre famously declared. We are condemned to freedom, forced to choose and to take responsibility for those choices without the comfort of predetermined meanings or values. This view places a heavy burden on us, but it also grants us the dignity of authoring our own lives.</p>
+                
+                <h2>How to Live Before You Die: Practical Reflections</h2>
+                
+                <p>Given the brevity and uncertainty of life, how then should we live? Based on my limited experience and the wisdom I've gleaned from others, here are some reflections:</p>
+                
+                <h3>1. Live Authentically</h3>
+                
+                <p>One of the greatest tragedies would be to reach the end of life and realize you've lived someone else's version of it. In a world filled with external expectations and social pressures, finding and expressing your authentic self requires courage and continuous self-examination.</p>
+                
+                <p>As an international student, I've sometimes felt pressure to assimilate completely, to erase my cultural differences in order to fit in. But I've come to realize that my unique perspective is not a liability but an asset. Living authentically means embracing all aspects of my identity, including my cultural heritage, while remaining open to growth and change.</p>
+                
+                <h3>2. Cultivate Meaningful Relationships</h3>
+                
+                <p>At the end of life, few people wish they had worked more hours or acquired more possessions. Instead, what matters most are the connections we've forged with others. The quality of our relationships has a profound impact on our happiness and well-being.</p>
+                
+                <p>Building and maintaining meaningful relationships requires vulnerability, empathy, and consistent effort. It means being fully present with others, listening deeply, and offering support without expectation of return. In an age of digital connection, it's all too easy to substitute shallow online interactions for the depth of genuine human connection.</p>
+                
+                <h3>3. Pursue Growth, Not Perfection</h3>
+                
+                <p>Many of us are trapped in a futile pursuit of perfection. We postpone living fully until we achieve some idealized stateu2014the perfect body, the perfect job, the perfect relationship. But life happens now, in all its messy imperfection.</p>
+                
+                <p>Instead of striving for perfection, we might aim for continuous growth. This mindset values progress over perfection, learning over knowing, and curiosity over certainty. It allows us to embrace our mistakes as opportunities for development rather than evidence of inadequacy.</p>
+                
+                <h3>4. Find Your Balance Between Being and Doing</h3>
+                
+                <p>Western culture often overemphasizes productivity and achievement at the expense of simply being. We become human doings rather than human beings. While purposeful action is important, there's also value in stillness, contemplation, and presence.</p>
+                
+                <p>Finding your personal balance between being and doing might involve practices like meditation, mindfulness, or time in nature. It might mean scheduling periods of deliberate rest amid busy periods of activity. Or it could involve challenging the voice that says you're only valuable when you're producing something.</p>
+                
+                <h3>5. Contribute Something Meaningful</h3>
+                
+                <p>A life well-lived usually involves some form of contributionu2014leaving the world slightly better than you found it. This doesn't necessarily mean grand achievements or public recognition. It could be as simple as being a supportive friend, a conscious consumer, or a responsible citizen.</p>
+                
+                <p>For me, part of the meaning of my education is the potential to use my knowledge and skills to address challenges facing my home country when I return. This sense of future contribution gives purpose to present difficulties.</p>
+                
+                <h2>Embracing Life's Contradictions</h2>
+                
+                <p>Perhaps the most profound insight about life is its inherent contradictions. Life is both infinitely precious and utterly ordinary. It is filled with joy and suffering, meaning and absurdity, connection and loneliness. Rather than trying to resolve these contradictions or emphasize one aspect over another, wisdom might lie in embracing the full spectrum of experience.</p>
+                
+                <p>The Japanese concept of "mono no aware" captures this beautifullyu2014it refers to the awareness of impermanence, a gentle sadness at the transience of things, and a deeper appreciation of life because of this awareness. The cherry blossoms are more beautiful precisely because they don't last forever.</p>
+                
+                <h2>Conclusion: Life as an Ongoing Question</h2>
+                
+                <p>In the end, perhaps the question "What is life?" is not meant to be definitively answered but continuously explored. Each of us must find our own meaning, make our own choices, and write our own story. And in this process, the question itself becomes a companion, a guide that helps us live more consciously and authentically.</p>
+                
+                <p>As I continue my journey as an international student, navigating between cultures and forging my path, I carry this question with me. It reminds me to pause amid the busyness of academic life, to reflect on what truly matters, and to make choices aligned with my deepest values. For in the words of the philosopher Su00f8ren Kierkegaard, "Life can only be understood backwards, but it must be lived forwards."</p>
+                
+                <!-- Article Tags -->
+                <div class="article-tags">
+                    <span class="article-tag">Life</span>
+                    <span class="article-tag">Purpose</span>
+                    <span class="article-tag">Meaning</span>
+                    <span class="article-tag">Philosophy</span>
+                    <span class="article-tag">Growth</span>
+                </div>
+                
+                <!-- Article Navigation -->
+                <div class="article-navigation">
+                    <a href="writing1.html" class="nav-previous"><i class="fas fa-arrow-left"></i> Previous Writing</a>
+                    <a href="../writings.html" class="nav-back"><i class="fas fa-th-large"></i> All Writings</a>
+                    <a href="writing3.html" class="nav-next">Next Writing <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Elfsight Subscription Form | Untitled Subscription Form -->
+            <script src="https://static.elfsight.com/platform/platform.js" async></script>
+            <div class="elfsight-app-a3279f79-5e02-425b-a8f4-ff12ecfbb964" data-elfsight-app-lazy></div>
+            <p>&copy; 2025 Saksham Sharma | All rights reserved.</p>
+            <p><small>Visit my <a href="https://saksham.info.np" style="color: var(--highlight-color);">professional website</a></small></p>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
+            const themeToggle = document.getElementById('theme-toggle');
+            const iconElement = themeToggle.querySelector('i');
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            // Check if user previously set a theme preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.body.setAttribute('data-theme', savedTheme);
+                updateIcon(savedTheme === 'light', iconElement);
+            }
+            
+            // Toggle theme when clicked
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = document.body.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? '' : 'light';
+                
+                document.body.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                updateIcon(newTheme === 'light', iconElement);
+            });
+            
+            // Function to update icon based on theme
+            function updateIcon(isLight, icon) {
+                if (isLight) {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                } else {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                }
+            }
+            
+            // Mobile menu toggle functionality
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    navLinks.classList.toggle('active');
+                    
+                    const icon = mobileMenuToggle.querySelector('i');
+                    if (icon.classList.contains('fa-bars')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    const isClickInsideNav = navLinks.contains(event.target);
+                    const isClickOnToggle = mobileMenuToggle.contains(event.target);
+                    
+                    if (!isClickInsideNav && !isClickOnToggle && navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        const icon = mobileMenuToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+                
+                // Close menu when clicking on a link
+                navLinks.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.remove('active');
+                        const icon = mobileMenuToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

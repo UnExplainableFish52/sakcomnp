@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="What is philosophy? According to my understanding... - A personal perspective on philosophy">
+    <meta name="keywords" content="Saksham Sharma, Philosophy, Perspective, International Student, Nepal">
+    <meta name="author" content="Saksham Sharma">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sakshamsharma.com.np/pages/writings/writing1.html">
+    
+    <title>What is Philosophy? - Saksham's Personal Space</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #5F9EA0;  /* Beautiful teal */
+            --accent-color: #E6E6FA;   /* Lavender */
+            --highlight-color: #00CED1; /* Cyan */
+            --bg-color: #1a1a1a;
+            --text-color: #ffffff;
+            --secondary-bg: #2a2a2a;
+            --transition: all 0.3s ease;
+        }
+
+        /* Light theme variables */
+        [data-theme="light"] {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --secondary-bg: #f5f5f5;
+        }
+
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto Slab', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            cursor: default;
+            font-weight: 300; /* Lighter font weight for the writings page */
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.3rem 2rem;
+            background-color: var(--secondary-bg);
+            border-bottom: 1px solid var(--highlight-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: auto;
+        }
+
+        .nav-brand a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 0.3rem;
+            margin-left: 1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-menu-header {
+            display: none;
+        }
+
+        .nav-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+            padding-bottom: 2px;
+            font-size: 0.95rem;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--highlight-color);
+            transition: width 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+            box-shadow: 0 0 8px var(--highlight-color);
+        }
+
+        /* Theme toggle */
+        .theme-toggle {
+            cursor: pointer;
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+        }
+
+        /* Content Styles */
+        .content {
+            min-height: calc(100vh - 150px);
+            padding: 2.5rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Article Container */
+        .article-container {
+            background-color: var(--secondary-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        /* Article Header */
+        .article-header {
+            padding: 2rem;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            border-bottom: 1px solid var(--primary-color);
+        }
+
+        .article-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .article-header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--highlight-color);
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+        }
+
+        /* Article Body */
+        .article-body {
+            padding: 2rem;
+            line-height: 1.8;
+        }
+
+        .article-body p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .article-body h2 {
+            color: var(--primary-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .article-body h3 {
+            color: var(--highlight-color);
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+
+        .article-body ul, .article-body ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-body blockquote {
+            border-left: 3px solid var(--primary-color);
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: var(--accent-color);
+        }
+
+        /* Article Tags */
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 2.5rem;
+        }
+
+        .article-tag {
+            background-color: rgba(95, 158, 160, 0.15);
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .article-tag:hover {
+            background-color: rgba(95, 158, 160, 0.3);
+        }
+
+        /* Article Navigation */
+        .article-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(95, 158, 160, 0.2);
+        }
+
+        .nav-previous, .nav-next, .nav-back {
+            color: var(--accent-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            background-color: rgba(95, 158, 160, 0.1);
+        }
+
+        .nav-previous:hover, .nav-next:hover, .nav-back:hover {
+            background-color: rgba(95, 158, 160, 0.2);
+            color: var(--highlight-color);
+        }
+
+        /* Footer Styles */
+        .footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: var(--secondary-bg);
+            margin-top: 0.5rem;
+        }
+
+        .footer-content {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 0 4rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .nav-brand {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                align-items: center;
+                background-color: var(--secondary-bg);
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease, padding 0.4s ease;
+                z-index: 10;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                opacity: 0;
+            }
+            
+            .nav-links.active {
+                max-height: 500px;
+                padding: 1rem 0;
+                opacity: 1;
+            }
+            
+            .nav-menu-header {
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: 0.5rem 0;
+                border-bottom: 1px solid rgba(95, 158, 160, 0.2);
+                margin-bottom: 0.5rem;
+            }
+            
+            .nav-menu-title {
+                font-size: 1.2rem;
+                color: var(--highlight-color);
+            }
+            
+            .nav-link {
+                width: 100%;
+                text-align: center;
+                padding: 0.8rem 0;
+                border-bottom: 1px solid rgba(95, 158, 160, 0.1);
+            }
+            
+            .nav-link:last-child {
+                border-bottom: none;
+            }
+            
+            .nav-link::after {
+                bottom: 5px;
+            }
+
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .article-meta {
+                gap: 1rem;
+            }
+            
+            .article-body {
+                padding: 1.5rem;
+            }
+            
+            .article-navigation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-previous, .nav-next, .nav-back {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="../../index.html"><h2>Saksham's Personal Space</h2></a>
+            <span id="theme-toggle" class="theme-toggle"><i class="fas fa-sun"></i></span>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="nav-links">
+            <div class="nav-menu-header">
+                <h2 class="nav-menu-title">Navigate To:</h2>
+            </div>
+            <a href="../../index.html" class="nav-link">Home</a>
+            <a href="../hobbies.html" class="nav-link">Hobbies</a>
+            <a href="../thoughts.html" class="nav-link">Thoughts</a>
+            <a href="../gallery.html" class="nav-link">Gallery</a>
+            <a href="../quotes.html" class="nav-link">Quotes</a>
+            <a href="../writings.html" class="nav-link active">Writings</a>
+            <a href="../contact.html" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+        <article class="article-container">
+            <!-- Article Header -->
+            <div class="article-header" style="background-image: url('../../images/writing1.jpg');">
+                <div class="article-header-content">
+                    <h1 class="article-title">What is Philosophy? According to my understanding...</h1>
+                    <div class="article-meta">
+                        <span><i class="far fa-calendar-alt"></i> Mar 15, 2025</span>
+                        <span><i class="fas fa-brain"></i> Philosophy</span>
+                        <span><i class="far fa-clock"></i> 6 min read</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Article Body -->
+            <div class="article-body">
+                <p>As an international student navigating the complex world of academia, I often find myself pondering the fundamental questions of existence. What is the nature of reality? How do we know what we know? What is the good life and how should we live it? These questions have led me to explore philosophy, a discipline that has both fascinated and confused me in equal measure.</p>
+                
+                <p>When I first encountered philosophy in my undergraduate studies, I thought it was simply about reading ancient texts and debating abstract ideas with no practical relevance. I approached it with the same mindset I had for other subjects—as a body of knowledge to be memorized and reproduced in exams. But I quickly realized that philosophy is not merely a subject; it is a practice, a method, and a way of life.</p>
+                
+                <h2>Philosophy as a Journey, Not a Destination</h2>
+                
+                <p>In my understanding, philosophy is not about finding definitive answers but about engaging in a continuous journey of questioning. The word "philosophy" itself comes from the Greek words "philo" (love) and "sophia" (wisdom), meaning "love of wisdom." This etymology reveals that philosophy is not about possessing wisdom but pursuing it with passion and dedication.</p>
+                
+                <p>When I read Plato's dialogues, I was struck by how Socrates claimed to know nothing and approached each conversation with an open mind. This Socratic approach taught me that genuine philosophical inquiry begins with acknowledging our ignorance. As Socrates famously stated, "The only true wisdom is in knowing you know nothing." This humility is essential for philosophical thinking.</p>
+                
+                <blockquote>
+                   "Philosophy begins in wonder. And, at the end, when philosophic thought has done its best, the wonder remains." <br> - Alfred North Whitehead
+                </blockquote>
+                
+                <h2>Philosophy as Critical Thinking</h2>
+                
+                <p>To me, philosophy is fundamentally about developing critical thinking skills. It teaches us to analyze arguments, identify assumptions, evaluate evidence, and construct logical reasoning. These skills are invaluable not only in academic settings but in everyday life as well.</p>
+                
+                <p>Coming from a different cultural background, I've found philosophical tools particularly helpful in navigating cross-cultural encounters. Philosophy has taught me to question my own cultural assumptions and to understand different perspectives without immediately judging them as right or wrong. This ability to step back from one's immediate judgments and examine them critically is one of philosophy's greatest gifts.</p>
+                
+                <h2>Philosophy as a Means of Understanding Ourselves</h2>
+                
+                <p>Perhaps the most personal aspect of philosophy is its role in self-understanding. As Socrates urged, "Know thyself," philosophy encourages us to examine our own beliefs, values, and assumptions. Through philosophical reflection, I've gained insights into my own thought processes, biases, and contradictions.</p>
+                
+                <p>This introspective dimension of philosophy has been particularly meaningful to me as I navigate between different cultural contexts. Philosophy provides a framework for understanding my identity not as fixed and predetermined but as fluid and constantly evolving through my experiences and reflections.</p>
+                
+                <h2>Philosophy as a Bridge Between Disciplines</h2>
+                
+                <p>One aspect of philosophy that I deeply appreciate is its interdisciplinary nature. Philosophy engages with questions that span across multiple fields—from science and mathematics to art and literature. It serves as a bridge that connects these diverse domains of knowledge.</p>
+                
+                <p>In my own studies, I've found philosophical concepts appearing in surprising places—in discussions about artificial intelligence ethics, in debates about climate justice, and in conversations about cultural identity. Philosophy provides a common language for addressing these complex issues that transcend disciplinary boundaries.</p>
+                
+                <h2>Philosophy as a Practice of Freedom</h2>
+                
+                <p>Finally, I understand philosophy as a practice of freedom. By questioning established norms and challenging conventional wisdom, philosophy opens up new possibilities for thinking and acting in the world. It liberates us from the constraints of unexamined habits and received opinions.</p>
+                
+                <p>As I continue my educational journey, I see philosophy not as a luxury or an abstract pursuit but as a necessary tool for living consciously and critically in our complex world. It helps me navigate the ethical challenges of our time, make sense of my experiences, and envision alternative futures.</p>
+                
+                <h2>Conclusion: Philosophy as a Lifelong Pursuit</h2>
+                
+                <p>My understanding of philosophy has evolved significantly since I first encountered it. What began as a subject to study has become a way of engaging with the world. I now see philosophical thinking not as something confined to classrooms and textbooks but as a practice that permeates all aspects of life.</p>
+                
+                <p>As an international student, I bring unique perspectives to philosophical discussions, just as philosophy gives me tools to reflect on my experiences across different cultural contexts. In this ongoing dialogue between my lived experiences and philosophical ideas, I continue to deepen my understanding of both.</p>
+                
+                <p>Philosophy, to me, is ultimately about living thoughtfully—approaching life with curiosity, critical reflection, and an openness to continuous learning. It is not something one ever masters or completes but a lifelong pursuit that continually enriches our understanding of ourselves and our world.</p>
+                
+                <!-- Article Tags -->
+                <div class="article-tags">
+                    <span class="article-tag">Philosophy</span>
+                    <span class="article-tag">Critical Thinking</span>
+                    <span class="article-tag">Self-Knowledge</span>
+                    <span class="article-tag">Education</span>
+                    <span class="article-tag">Wisdom</span>
+                </div>
+                
+                <!-- Article Navigation -->
+                <div class="article-navigation">
+                    <a href="writing3.html" class="nav-previous"><i class="fas fa-arrow-left"></i> Previous Writing</a>
+                    <a href="../writings.html" class="nav-back"><i class="fas fa-th-large"></i> All Writings</a>
+                    <a href="writing2.html" class="nav-next">Next Writing <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Elfsight Subscription Form | Untitled Subscription Form -->
+            <script src="https://static.elfsight.com/platform/platform.js" async></script>
+            <div class="elfsight-app-a3279f79-5e02-425b-a8f4-ff12ecfbb964" data-elfsight-app-lazy></div>
+            <p>&copy; 2025 Saksham Sharma | All rights reserved.</p>
+            <p><small>Visit my <a href="https://saksham.info.np" style="color: var(--highlight-color);">professional website</a></small></p>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
+            const themeToggle = document.getElementById('theme-toggle');
+            const iconElement = themeToggle.querySelector('i');
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            // Check if user previously set a theme preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.body.setAttribute('data-theme', savedTheme);
+                updateIcon(savedTheme === 'light', iconElement);
+            }
+            
+            // Toggle theme when clicked
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = document.body.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? '' : 'light';
+                
+                document.body.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                updateIcon(newTheme === 'light', iconElement);
+            });
+            
+            // Function to update icon based on theme
+            function updateIcon(isLight, icon) {
+                if (isLight) {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                } else {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                }
+            }
+            
+            // Mobile menu toggle functionality
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    navLinks.classList.toggle('active');
+                    
+                    const icon = mobileMenuToggle.querySelector('i');
+                    if (icon.classList.contains('fa-bars')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    const isClickInsideNav = navLinks.contains(event.target);
+                    const isClickOnToggle = mobileMenuToggle.contains(event.target);
+                    
+                    if (!isClickInsideNav && !isClickOnToggle && navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        const icon = mobileMenuToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+                
+                // Close menu when clicking on a link
+                navLinks.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.remove('active');
+                        const icon = mobileMenuToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

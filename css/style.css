@@ -1,0 +1,558 @@
+/* Main Stylesheet for Saksham's Personal Website */
+
+/* ==========================================================================
+   CSS Variables & Theming
+   ========================================================================== */
+   :root {
+    --primary-color: #5F9EA0;  /* Beautiful teal */
+    --accent-color: #E6E6FA;   /* Lavender */
+    --highlight-color: #00CED1; /* Cyan */
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --secondary-bg: #2a2a2a;
+    --transition: all 0.3s ease;
+}
+
+/* Light theme variables */
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --secondary-bg: #f5f5f5;
+}
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Slab', serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    cursor: default;
+}
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem 2rem;
+    background-color: var(--secondary-bg);
+    border-bottom: 1px solid var(--highlight-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+}
+
+.nav-brand a {
+    color: var(--highlight-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 0.3rem;
+    margin-left: 1rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-menu-header {
+    display: none;
+}
+
+.nav-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: var(--transition);
+    position: relative;
+    padding-bottom: 2px;
+    font-size: 0.95rem;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--highlight-color);
+    transition: width 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+    box-shadow: 0 0 8px var(--highlight-color);
+}
+
+/* Theme toggle */
+.theme-toggle {
+    cursor: pointer;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(30deg);
+}
+
+/* ==========================================================================
+   Marquee Notice
+   ========================================================================== */
+.notice-container {
+    background-color: var(--secondary-bg);
+    overflow: hidden;
+    padding: 10px 0;
+    position: relative;
+}
+
+.notice-container::before,
+.notice-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    z-index: 2;
+}
+
+.notice-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--secondary-bg), transparent);
+}
+
+.notice-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--secondary-bg), transparent);
+}
+
+.marquee-notice {
+    white-space: nowrap;
+    overflow: hidden;
+    color: var(--accent-color);
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+.marquee-notice span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 25s linear infinite;
+}
+
+.marquee-notice span a {
+    color: var(--highlight-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.marquee-notice span a:hover {
+    text-decoration: underline;
+}
+
+@keyframes marquee {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
+/* ==========================================================================
+   Content Styles
+   ========================================================================== */
+.content {
+    min-height: calc(100vh - 150px);
+    padding: 2.5rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   Profile Container
+   ========================================================================== */
+.profile-container {
+    background-color: var(--secondary-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-image {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--highlight-color);
+    box-shadow: 0 0 15px rgba(0, 206, 209, 0.3);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--highlight-color);
+}
+
+.title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+    font-weight: 400;
+}
+
+.location {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.bio {
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    font-size: 1.05rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-link {
+    color: var(--accent-color);
+    font-size: 1.4rem;
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    color: var(--highlight-color);
+    transform: translateY(-3px);
+}
+
+.resume-button {
+    display: inline-block;
+    padding: 0.6rem 2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--highlight-color));
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: var(--transition);
+    margin-top: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.resume-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   Section Styles
+   ========================================================================== */
+.section {
+    background-color: var(--secondary-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    padding: 2rem;
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(95, 158, 160, 0.2);
+}
+
+/* ==========================================================================
+   Card Styles
+   ========================================================================== */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: var(--highlight-color);
+}
+
+.card-description {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.card-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: rgba(95, 158, 160, 0.1);
+    color: var(--accent-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+.card-link:hover {
+    background-color: rgba(95, 158, 160, 0.2);
+    color: var(--highlight-color);
+}
+
+/* ==========================================================================
+   Page Header Styles
+   ========================================================================== */
+.page-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: var(--highlight-color);
+    margin-bottom: 0.5rem;
+}
+
+.page-description {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   Hobby Section Styles
+   ========================================================================== */
+.hobby-container {
+    margin-bottom: 3rem;
+}
+
+.hobby-section {
+    background-color: var(--secondary-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.hobby-image {
+    flex: 1;
+    min-height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hobby-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hobby-content {
+    flex: 2; /* Make content area larger than image area */
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hobby-title {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(95, 158, 160, 0.2);
+}
+
+.hobby-description {
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.hobby-list {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.hobby-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   Footer Styles
+   ========================================================================== */
+.footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: var(--secondary-bg);
+    margin-top: 0.5rem;
+}
+
+.footer-content {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 4rem;
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+@media (min-width: 768px) {
+    .hobby-section {
+        flex-direction: row;
+        align-items: stretch;
+    }
+    
+    .reverse-layout {
+        flex-direction: row-reverse;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .nav-brand {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--secondary-bg);
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        z-index: 10;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+    }
+    
+    .nav-links.active {
+        max-height: 500px; /* Increased from 300px to fix navigation issue */
+        padding: 1rem 0;
+        opacity: 1;
+    }
+    
+    .nav-menu-header {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(95, 158, 160, 0.2);
+        margin-bottom: 0.5rem;
+    }
+    
+    .nav-menu-title {
+        font-size: 1.2rem;
+        color: var(--highlight-color);
+    }
+    
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem 0;
+        border-bottom: 1px solid rgba(95, 158, 160, 0.1);
+    }
+    
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-link::after {
+        bottom: 5px;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .hobby-image {
+        min-height: 200px;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+}
