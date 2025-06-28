@@ -3,7 +3,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // DOM Elements
+    // Theme Toggle Functionality
     const themeToggle = document.getElementById('theme-toggle');
     const iconElement = themeToggle.querySelector('i');
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
@@ -44,6 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
             e.stopPropagation();
             navLinks.classList.toggle('active');
             
+            // Debug: log the current state
+            console.log('Mobile menu toggled:', navLinks.classList.contains('active'));
+            
             const icon = mobileMenuToggle.querySelector('i');
             if (icon.classList.contains('fa-bars')) {
                 icon.classList.remove('fa-bars');
@@ -74,6 +77,42 @@ document.addEventListener('DOMContentLoaded', function() {
                 const icon = mobileMenuToggle.querySelector('i');
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
+            });
+        });
+    }
+
+    // Initialize any category/tag filters if they exist
+    const filterButtons = document.querySelectorAll('.category-filter, .tag-filter');
+    if (filterButtons.length > 0) {
+        const filterableItems = document.querySelectorAll('[data-category]');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-category') || this.getAttribute('data-tag');
+                
+                // Show all items if 'all' is selected
+                if (filterValue === 'all') {
+                    filterableItems.forEach(item => {
+                        item.style.display = 'block';
+                    });
+                } else {
+                    // Filter items
+                    filterableItems.forEach(item => {
+                        if (item.getAttribute('data-category') === filterValue || 
+                            (item.querySelector('.article-category') && 
+                             item.querySelector('.article-category').textContent.includes(filterValue))) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                }
             });
         });
     }

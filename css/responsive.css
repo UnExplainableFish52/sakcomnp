@@ -1,0 +1,239 @@
+/* Responsive styles for Saksham's Personal Website */
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+/* Mobile Devices (smaller than 768px) */
+@media (max-width: 768px) {
+    /* Navigation */
+    .navbar {
+        padding: 0.3rem 1rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: block !important;
+        background: none !important;
+        border: none !important;
+        color: var(--accent-color) !important;
+        font-size: 1.5rem !important;
+        cursor: pointer !important;
+        transition: var(--transition) !important;
+        padding: 0.5rem !important;
+        margin-left: 1rem !important;
+        z-index: 15 !important;
+    }
+    
+    .mobile-menu-toggle:hover {
+        color: var(--highlight-color) !important;
+    }
+    
+    .nav-brand {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .nav-brand h2 {
+        font-size: 1.2rem;
+    }
+    
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--secondary-bg);
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.5s ease;
+        z-index: 10;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        border-radius: 0 0 8px 8px;
+        width: 100%;
+    }
+    
+    .nav-links.active {
+        max-height: 600px; /* Increased to ensure all 5 items + header are visible */
+        padding: 1rem 0;
+        opacity: 1;
+        overflow-y: auto; /* Allow scrolling if needed */
+    }
+    
+    .nav-menu-header {
+        display: block !important;
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(95, 158, 160, 0.2);
+        margin-bottom: 0.5rem;
+    }
+    
+    .nav-menu-title {
+        font-size: 1.2rem;
+        color: var(--highlight-color);
+    }
+    
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0 !important;
+        border-bottom: 1px solid rgba(95, 158, 160, 0.1);
+        display: block !important;
+        color: var(--accent-color) !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover {
+        background-color: rgba(95, 158, 160, 0.1);
+        color: var(--highlight-color) !important;
+    }
+    
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-link::after {
+        bottom: 5px;
+    }
+
+    /* Content */
+    .content {
+        padding: 2rem 1rem;
+    }
+
+    /* Page Titles */
+    .page-title {
+        font-size: 2rem !important;
+    }
+
+    .page-description {
+        font-size: 1rem !important;
+    }
+
+    /* Profile Section */
+    .profile-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .profile-image img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .name {
+        font-size: 2rem;
+    }
+
+    /* Cards & Articles */
+    .cards-container, .articles-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .card, .article-card {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Hobbies */
+    .hobby-section {
+        flex-direction: column;
+    }
+
+    .hobby-image {
+        width: 100% !important;
+        margin-right: 0 !important;
+        margin-bottom: 1rem;
+    }
+
+    /* Footer */
+    .footer-content {
+        padding: 0 1rem;
+    }
+}
+
+/* Tablets (768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .cards-container, .articles-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .content {
+        padding: 2.5rem 2rem;
+    }
+    
+    .hobby-section {
+        flex-direction: column;
+    }
+    
+    .hobby-image {
+        width: 100% !important;
+        margin-right: 0 !important;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Larger Desktops (>1400px) */
+@media (min-width: 1400px) {
+    .content {
+        max-width: 1200px !important;
+    }
+    
+    .cards-container, .articles-grid {
+        gap: 2.5rem !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    .navbar, .footer, .theme-toggle, .mobile-menu-toggle {
+        display: none !important;
+    }
+    
+    .content {
+        padding: 0 !important;
+    }
+    
+    body {
+        background-color: white !important;
+        color: black !important;
+    }
+}
+
+/* ==========================================================================
+   Desktop & Tablet Navigation (ensure visibility)
+   ========================================================================== */
+
+/* Desktop Navigation - ensure nav-links are always visible on larger screens */
+@media (min-width: 769px) {
+    .nav-links {
+        display: flex !important;
+        position: static !important;
+        flex-direction: row !important;
+        max-height: none !important;
+        overflow: visible !important;
+        opacity: 1 !important;
+        background-color: transparent !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        gap: 1.5rem;
+    }
+    
+    .nav-menu-header {
+        display: none !important;
+    }
+    
+    .mobile-menu-toggle {
+        display: none !important;
+    }
+    
+    .nav-link {
+        width: auto !important;
+        text-align: left !important;
+        padding: 0 !important;
+        border-bottom: none !important;
+    }
+}

@@ -1,0 +1,414 @@
+/* Articles.css - Unified styling for all writing/article pages */
+/* Optimized for Saksham Sharma's philosophical writings */
+
+:root {
+    --primary-color: #5F9EA0;
+    --accent-color: #E6E6FA;
+    --highlight-color: #00CED1;
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --secondary-bg: #2a2a2a;
+    --transition: all 0.3s ease;
+    --content-max-width: 900px;
+    --article-spacing: 2rem;
+}
+
+/* Light theme variables */
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --secondary-bg: #f5f5f5;
+}
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Slab', serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    font-weight: 300;
+    cursor: default;
+}
+
+/* Navigation styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    background-color: var(--secondary-bg);
+    border-bottom: 1px solid var(--highlight-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-brand a {
+    color: var(--highlight-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.nav-brand h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.theme-toggle {
+    cursor: pointer;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+    margin-left: 0.5rem;
+}
+
+.theme-toggle:hover {
+    transform: rotate(30deg);
+    color: var(--highlight-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-menu-header {
+    display: none;
+}
+
+.nav-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: var(--transition);
+    position: relative;
+    padding-bottom: 2px;
+    font-size: 0.95rem;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--highlight-color);
+    transition: width 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+    box-shadow: 0 0 8px var(--highlight-color);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 0.3rem;
+}
+
+/* Content styles */
+.content {
+    min-height: calc(100vh - 150px);
+    padding: 2.5rem 2rem;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+}
+
+/* Page header */
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(95, 158, 160, 0.2);
+}
+
+.page-title {
+    font-size: 2.8rem;
+    color: var(--highlight-color);
+    margin-bottom: 1rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Article content */
+.article-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.article-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: var(--secondary-bg);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+}
+
+.article-date,
+.article-category,
+.article-author {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.article-body {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+.article-body h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin: 2.5rem 0 1.5rem 0;
+    font-weight: 400;
+    border-bottom: 1px solid rgba(95, 158, 160, 0.2);
+    padding-bottom: 0.5rem;
+}
+
+.article-body h3 {
+    color: var(--highlight-color);
+    font-size: 1.4rem;
+    margin: 2rem 0 1rem 0;
+    font-weight: 400;
+}
+
+.article-body p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.article-body blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: var(--accent-color);
+    background-color: rgba(95, 158, 160, 0.05);
+    padding: 1rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.article-body ul,
+.article-body ol {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+}
+
+.article-body li {
+    margin-bottom: 0.5rem;
+}
+
+/* Navigation between articles */
+.article-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(95, 158, 160, 0.2);
+}
+
+.nav-button {
+    padding: 0.8rem 1.5rem;
+    background-color: rgba(95, 158, 160, 0.1);
+    color: var(--accent-color);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    border: 1px solid transparent;
+}
+
+.nav-button:hover {
+    background-color: rgba(95, 158, 160, 0.2);
+    color: var(--highlight-color);
+    border-color: var(--highlight-color);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: var(--secondary-bg);
+    margin-top: 2rem;
+    border-top: 1px solid rgba(95, 158, 160, 0.2);
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer p {
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.footer a {
+    color: var(--highlight-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.3rem 1rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: block !important;
+    }
+    
+    .nav-brand {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--secondary-bg);
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        z-index: 10;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+    }
+    
+    .nav-links.active {
+        max-height: 300px;
+        padding: 1rem 0;
+        opacity: 1;
+    }
+    
+    .nav-menu-header {
+        display: block !important;
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(95, 158, 160, 0.2);
+        margin-bottom: 0.5rem;
+    }
+    
+    .nav-menu-title {
+        font-size: 1.1rem;
+        color: var(--highlight-color);
+        margin: 0;
+    }
+    
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem 0 !important;
+        border-bottom: 1px solid rgba(95, 158, 160, 0.1);
+    }
+    
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    .content {
+        padding: 2rem 1rem;
+    }
+    
+    .page-title {
+        font-size: 2.2rem;
+    }
+    
+    .page-subtitle {
+        font-size: 1rem;
+    }
+    
+    .article-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .article-body {
+        font-size: 1rem;
+    }
+    
+    .article-body h2 {
+        font-size: 1.5rem;
+    }
+    
+    .article-body h3 {
+        font-size: 1.2rem;
+    }
+    
+    .article-navigation {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-button {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-brand h2 {
+        font-size: 1rem;
+    }
+    
+    .page-title {
+        font-size: 1.8rem;
+    }
+    
+    .content {
+        padding: 1.5rem 0.8rem;
+    }
+    
+    .article-body blockquote {
+        padding: 0.8rem 1rem;
+        margin: 1.5rem 0;
+    }
+}

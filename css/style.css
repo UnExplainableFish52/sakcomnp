@@ -372,20 +372,22 @@ body {
    ========================================================================== */
 .page-header {
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
 }
 
 .page-title {
     font-size: 2.5rem;
+    margin-bottom: 1rem;
     color: var(--highlight-color);
-    margin-bottom: 0.5rem;
 }
 
 .page-description {
     font-size: 1.1rem;
     color: var(--accent-color);
-    max-width: 700px;
+    max-width: 600px;
     margin: 0 auto;
+    line-height: 1.7;
 }
 
 /* ==========================================================================
@@ -469,90 +471,200 @@ body {
 }
 
 /* ==========================================================================
-   Responsive Adjustments
+   Writings Page Specific Styles
    ========================================================================== */
-@media (min-width: 768px) {
-    .hobby-section {
-        flex-direction: row;
-        align-items: stretch;
-    }
-    
-    .reverse-layout {
-        flex-direction: row-reverse;
-    }
+
+/* Page Header */
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
 }
 
-@media (max-width: 768px) {
-    .mobile-menu-toggle {
-        display: block;
-    }
-    
-    .nav-brand {
-        width: 100%;
-        justify-content: space-between;
-    }
-    
-    .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        align-items: center;
-        background-color: var(--secondary-bg);
-        padding: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease, padding 0.4s ease;
-        z-index: 10;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        opacity: 0;
-    }
-    
-    .nav-links.active {
-        max-height: 500px; /* Increased from 300px to fix navigation issue */
-        padding: 1rem 0;
-        opacity: 1;
-    }
-    
-    .nav-menu-header {
-        display: block;
-        width: 100%;
-        text-align: center;
-        padding: 0.5rem 0;
-        border-bottom: 1px solid rgba(95, 158, 160, 0.2);
-        margin-bottom: 0.5rem;
-    }
-    
-    .nav-menu-title {
-        font-size: 1.2rem;
-        color: var(--highlight-color);
-    }
-    
-    .nav-link {
-        width: 100%;
-        text-align: center;
-        padding: 0.8rem 0;
-        border-bottom: 1px solid rgba(95, 158, 160, 0.1);
-    }
-    
-    .nav-link:last-child {
-        border-bottom: none;
-    }
-    
-    .nav-link::after {
-        bottom: 5px;
-    }
+.page-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--highlight-color);
+}
 
-    .cards-container {
+.page-description {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Writings Grid */
+.writings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Writing Card */
+.writing-card {
+    background-color: var(--secondary-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.writing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 206, 209, 0.2);
+}
+
+.writing-card.coming-soon {
+    opacity: 0.8;
+}
+
+.writing-card.coming-soon:hover {
+    opacity: 1;
+}
+
+/* Card Header */
+.card-header {
+    padding: 1.5rem;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.card-header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--highlight-color);
+}
+
+.card-date {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Card Body */
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-excerpt {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-tag {
+    background-color: rgba(95, 158, 160, 0.15);
+    color: var(--primary-color);
+    padding: 0.2rem 0.6rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    transition: var(--transition);
+}
+
+.card-tag:hover {
+    background-color: rgba(95, 158, 160, 0.3);
+}
+
+/* Card Footer */
+.card-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgba(95, 158, 160, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.read-more {
+    color: var(--highlight-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.read-more:hover {
+    color: var(--accent-color);
+}
+
+.reading-time {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+/* Featured and Coming Soon Sections */
+.featured-writings {
+    margin-bottom: 4rem;
+}
+
+.coming-soon-writings {
+    margin-bottom: 3rem;
+}
+
+/* Responsive adjustments for writings page */
+@media (max-width: 768px) {
+    .writings-grid {
         grid-template-columns: 1fr;
     }
     
-    .hobby-image {
-        min-height: 200px;
-    }
-
     .page-title {
         font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .card-title {
+        font-size: 1.3rem;
     }
 }

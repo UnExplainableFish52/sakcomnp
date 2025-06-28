@@ -3,400 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="What is humanity and how did we come here where are we heading? - Reflections on our collective journey">
-    <meta name="keywords" content="Saksham Sharma, Humanity, Evolution, Future, International Student, Nepal">
+    <meta name="description" content="What is humanity and how did we come here where are we heading? Philosophical reflections on our collective journey by Saksham Sharma, 19-year-old philosophy enthusiast from Nepal. Explore human evolution, consciousness, and our shared future.">
+    <meta name="keywords" content="Saksham Sharma, 19, philosophy enthusiast, Nepal, unexplainablefish52, noblefish52, contact saksham, humanity, human evolution, consciousness, future of humanity, philosophy, anthropology">
     <meta name="author" content="Saksham Sharma">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://sakshamsharma.com.np/pages/writings/writing3.html">
     
-    <title>Humanity: Past, Present, Future - Saksham's Personal Space</title>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="What is Humanity and How Did We Come Here? - Saksham Sharma">
+    <meta property="og:description" content="Philosophical reflections on our collective journey by Saksham Sharma, philosophy enthusiast from Nepal. Explore human evolution, consciousness, and our shared future.">
+    <meta property="og:image" content="https://sakshamsharma.com.np/images/writing3.jpg">
+    <meta property="og:url" content="https://sakshamsharma.com.np/pages/writings/writing3.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Saksham Sharma | Philosophy Enthusiast">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What is Humanity and How Did We Come Here? - Saksham Sharma">
+    <meta name="twitter:description" content="Philosophical reflections on our collective journey by Saksham Sharma, philosophy enthusiast from Nepal.">
+    <meta name="twitter:image" content="https://sakshamsharma.com.np/images/writing3.jpg">
+    
+    <title>What is Humanity and How Did We Come Here? - Saksham Sharma | Philosophy Enthusiast Nepal</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary-color: #5F9EA0;  /* Beautiful teal */
-            --accent-color: #E6E6FA;   /* Lavender */
-            --highlight-color: #00CED1; /* Cyan */
-            --bg-color: #1a1a1a;
-            --text-color: #ffffff;
-            --secondary-bg: #2a2a2a;
-            --transition: all 0.3s ease;
-        }
-
-        /* Light theme variables */
-        [data-theme="light"] {
-            --bg-color: #ffffff;
-            --text-color: #1a1a1a;
-            --secondary-bg: #f5f5f5;
-        }
-
-        /* Base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Roboto Slab', serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            cursor: default;
-            font-weight: 300; /* Lighter font weight for the writings page */
-        }
-
-        /* Navbar Styles */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.3rem 2rem;
-            background-color: var(--secondary-bg);
-            border-bottom: 1px solid var(--highlight-color);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-brand {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: auto;
-        }
-
-        .nav-brand a {
-            color: var(--highlight-color);
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-        }
-
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--accent-color);
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: var(--transition);
-            padding: 0.3rem;
-            margin-left: 1rem;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .nav-menu-header {
-            display: none;
-        }
-
-        .nav-link {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: var(--transition);
-            position: relative;
-            padding-bottom: 2px;
-            font-size: 0.95rem;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: var(--highlight-color);
-            transition: width 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-            box-shadow: 0 0 8px var(--highlight-color);
-        }
-
-        /* Theme toggle */
-        .theme-toggle {
-            cursor: pointer;
-            margin-left: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .theme-toggle:hover {
-            transform: rotate(30deg);
-        }
-
-        /* Content Styles */
-        .content {
-            min-height: calc(100vh - 150px);
-            padding: 2.5rem 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Article Container */
-        .article-container {
-            background-color: var(--secondary-bg);
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            margin-bottom: 2rem;
-        }
-
-        /* Article Header */
-        .article-header {
-            padding: 2rem;
-            position: relative;
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            border-bottom: 1px solid var(--primary-color);
-        }
-
-        .article-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-        }
-
-        .article-header-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .article-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--highlight-color);
-        }
-
-        .article-meta {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .article-meta span {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            color: var(--accent-color);
-        }
-
-        /* Article Body */
-        .article-body {
-            padding: 2rem;
-            line-height: 1.8;
-        }
-
-        .article-body p {
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-        }
-
-        .article-body h2 {
-            color: var(--primary-color);
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-
-        .article-body h3 {
-            color: var(--highlight-color);
-            margin-top: 1.5rem;
-            margin-bottom: 0.8rem;
-            font-size: 1.4rem;
-        }
-
-        .article-body ul, .article-body ol {
-            margin-bottom: 1.5rem;
-            padding-left: 2rem;
-        }
-
-        .article-body li {
-            margin-bottom: 0.5rem;
-        }
-
-        .article-body blockquote {
-            border-left: 3px solid var(--primary-color);
-            padding-left: 1.5rem;
-            margin: 1.5rem 0;
-            font-style: italic;
-            color: var(--accent-color);
-        }
-
-        /* Article Tags */
-        .article-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-top: 2.5rem;
-        }
-
-        .article-tag {
-            background-color: rgba(95, 158, 160, 0.15);
-            color: var(--primary-color);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            transition: var(--transition);
-        }
-
-        .article-tag:hover {
-            background-color: rgba(95, 158, 160, 0.3);
-        }
-
-        /* Article Navigation */
-        .article-navigation {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(95, 158, 160, 0.2);
-        }
-
-        .nav-previous, .nav-next, .nav-back {
-            color: var(--accent-color);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: var(--transition);
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            background-color: rgba(95, 158, 160, 0.1);
-        }
-
-        .nav-previous:hover, .nav-next:hover, .nav-back:hover {
-            background-color: rgba(95, 158, 160, 0.2);
-            color: var(--highlight-color);
-        }
-
-        /* Footer Styles */
-        .footer {
-            text-align: center;
-            padding: 1rem 0;
-            background-color: var(--secondary-bg);
-            margin-top: 0.5rem;
-        }
-
-        .footer-content {
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 0 4rem;
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
-            }
-            
-            .nav-brand {
-                width: 100%;
-                justify-content: space-between;
-            }
-            
-            .nav-links {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                flex-direction: column;
-                align-items: center;
-                background-color: var(--secondary-bg);
-                padding: 0;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.4s ease, padding 0.4s ease;
-                z-index: 10;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-                opacity: 0;
-            }
-            
-            .nav-links.active {
-                max-height: 500px;
-                padding: 1rem 0;
-                opacity: 1;
-            }
-            
-            .nav-menu-header {
-                display: block;
-                width: 100%;
-                text-align: center;
-                padding: 0.5rem 0;
-                border-bottom: 1px solid rgba(95, 158, 160, 0.2);
-                margin-bottom: 0.5rem;
-            }
-            
-            .nav-menu-title {
-                font-size: 1.2rem;
-                color: var(--highlight-color);
-            }
-            
-            .nav-link {
-                width: 100%;
-                text-align: center;
-                padding: 0.8rem 0;
-                border-bottom: 1px solid rgba(95, 158, 160, 0.1);
-            }
-            
-            .nav-link:last-child {
-                border-bottom: none;
-            }
-            
-            .nav-link::after {
-                bottom: 5px;
-            }
-
-            .article-title {
-                font-size: 2rem;
-            }
-            
-            .article-meta {
-                gap: 1rem;
-            }
-            
-            .article-body {
-                padding: 1.5rem;
-            }
-            
-            .article-navigation {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .nav-previous, .nav-next, .nav-back {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="../../css/articles.css">
 </head>
 
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-brand">
-            <a href="../../index.html"><h2>Saksham's Personal Space</h2></a>
+            <a href="../../index.html"><h2>Saksham Sharma | Philosophy Enthusiast</h2></a>
             <span id="theme-toggle" class="theme-toggle"><i class="fas fa-sun"></i></span>
             <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
                 <i class="fas fa-bars"></i>
@@ -404,14 +43,12 @@
         </div>
         <div class="nav-links">
             <div class="nav-menu-header">
-                <h2 class="nav-menu-title">Navigate To:</h2>
+                <h2 class="nav-menu-title">Saksham Sharma</h2>
             </div>
             <a href="../../index.html" class="nav-link">Home</a>
-            <a href="../hobbies.html" class="nav-link">Hobbies</a>
-            <a href="../thoughts.html" class="nav-link">Thoughts</a>
-            <a href="../gallery.html" class="nav-link">Gallery</a>
             <a href="../quotes.html" class="nav-link">Quotes</a>
             <a href="../writings.html" class="nav-link active">Writings</a>
+            <a href="../thoughts.html" class="nav-link">Thoughts</a>
             <a href="../contact.html" class="nav-link">Contact</a>
         </div>
     </nav>
@@ -542,85 +179,7 @@
             <p><small>Visit my <a href="https://saksham.info.np" style="color: var(--highlight-color);">professional website</a></small></p>
         </div>
     </footer>
+    <script src="../../js/main.js"></script>
 
-    <!-- Theme Toggle Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // DOM Elements
-            const themeToggle = document.getElementById('theme-toggle');
-            const iconElement = themeToggle.querySelector('i');
-            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            
-            // Check if user previously set a theme preference
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                document.body.setAttribute('data-theme', savedTheme);
-                updateIcon(savedTheme === 'light', iconElement);
-            }
-            
-            // Toggle theme when clicked
-            themeToggle.addEventListener('click', function() {
-                const currentTheme = document.body.getAttribute('data-theme');
-                const newTheme = currentTheme === 'light' ? '' : 'light';
-                
-                document.body.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-                
-                updateIcon(newTheme === 'light', iconElement);
-            });
-            
-            // Function to update icon based on theme
-            function updateIcon(isLight, icon) {
-                if (isLight) {
-                    icon.classList.remove('fa-sun');
-                    icon.classList.add('fa-moon');
-                } else {
-                    icon.classList.remove('fa-moon');
-                    icon.classList.add('fa-sun');
-                }
-            }
-            
-            // Mobile menu toggle functionality
-            if (mobileMenuToggle) {
-                mobileMenuToggle.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    navLinks.classList.toggle('active');
-                    
-                    const icon = mobileMenuToggle.querySelector('i');
-                    if (icon.classList.contains('fa-bars')) {
-                        icon.classList.remove('fa-bars');
-                        icon.classList.add('fa-times');
-                    } else {
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    }
-                });
-                
-                // Close menu when clicking outside
-                document.addEventListener('click', function(event) {
-                    const isClickInsideNav = navLinks.contains(event.target);
-                    const isClickOnToggle = mobileMenuToggle.contains(event.target);
-                    
-                    if (!isClickInsideNav && !isClickOnToggle && navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                        const icon = mobileMenuToggle.querySelector('i');
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    }
-                });
-                
-                // Close menu when clicking on a link
-                navLinks.querySelectorAll('.nav-link').forEach(link => {
-                    link.addEventListener('click', function() {
-                        navLinks.classList.remove('active');
-                        const icon = mobileMenuToggle.querySelector('i');
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    });
-                });
-            }
-        });
-    </script>
 </body>
 </html>
