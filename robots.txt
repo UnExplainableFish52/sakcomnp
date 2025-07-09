@@ -1,2 +1,3 @@
 User-agent: *
 Disallow:
+Sitemap: https://sakshamsharma.com.np/sitemap.xml
