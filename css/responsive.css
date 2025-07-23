@@ -1,9 +1,3 @@
-/* Responsive styles for Saksham's Personal Website */
-
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
-
 /* Mobile Devices (smaller than 768px) */
 @media (max-width: 768px) {
     /* Navigation */
@@ -128,6 +122,8 @@
     .name {
         font-size: 2rem;
     }
+
+    
 
     /* Cards & Articles */
     .cards-container, .articles-grid {
