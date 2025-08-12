@@ -1,513 +1,172 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Philosophical Quotes by Saksham Sharma, 19-year-old philosophy enthusiast from Nepal. UnexplainableFish52 collection of wisdom and inspirational thoughts.">
-    <meta name="keywords" content="Saksham Sharma, 19, philosophy enthusiast, Nepal, unexplainablefish52, noblefish52, contact saksham, philosophy quotes, wisdom, inspirational thoughts, self-made philosopher">
-    <meta name="author" content="Saksham Sharma">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://sakshamsharma.com.np/pages/quotes.html">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Philosophical Quotes - Saksham Sharma | Nepal Philosophy Enthusiast">
-    <meta property="og:description" content="Philosophical Quotes by Saksham Sharma, 19-year-old philosophy enthusiast from Nepal. Collection of wisdom and inspirational thoughts.">
-    <meta property="og:image" content="https://sakshamsharma.com.np/images/quotes-banner.jpg">
-    <meta property="og:url" content="https://sakshamsharma.com.np/pages/quotes.html">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Saksham Sharma | Philosophy Enthusiast">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Philosophical Quotes - Saksham Sharma | Nepal Philosophy Enthusiast">
-    <meta name="twitter:description" content="Philosophical Quotes by Saksham Sharma, philosophy enthusiast from Nepal.">
-    <meta name="twitter:image" content="https://sakshamsharma.com.np/images/quotes-banner.jpg">
-    
-    <title>Philosophical Quotes - Saksham Sharma | 19 Nepal Philosophy Enthusiast UnexplainableFish52</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/responsive.css">
-    
-    <style>
-        /* Additional page-specific styles for quote tags */
-        .tag-philosophy { background-color: rgba(147, 112, 219, 0.2); }
-        .tag-raw { background-color: rgba(220, 20, 60, 0.2); }
-        .tag-life { background-color: rgba(46, 139, 87, 0.2); }
-        .tag-wisdom { background-color: rgba(255, 165, 0, 0.2); }
-        .tag-nature { background-color: rgba(32, 178, 170, 0.2); }
-        .tag-mindblowing { background-color: rgba(75, 0, 130, 0.2); }
-        .tag-lol { background-color: rgba(255, 215, 0, 0.2); }
-        .tag-science { background-color: rgba(30, 144, 255, 0.2); }
-        .tag-death { background-color: rgba(128, 128, 128, 0.2); }
-        .tag-divinity { background-color: rgba(218, 165, 32, 0.2); }
-        .tag-humanity { background-color: rgba(255, 99, 71, 0.2); }
-        
-        /* Tag Filters */
-        .tag-filters {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-bottom: 2rem;
-            justify-content: center;
-        }
-
-        .tag-filter {
-            padding: 0.4rem 1rem;
-            background-color: rgba(95, 158, 160, 0.1);
-            color: var(--accent-color);
-            border-radius: 20px;
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 0.9rem;
-            border: none;
-        }
-
-        .tag-filter:hover, .tag-filter.active {
-            background-color: rgba(95, 158, 160, 0.3);
-            color: var(--highlight-color);
-        }
-        
-        /* Quotes Container */
-        .quotes-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        /* Quote Card */
-        .quote-card {
-            background-color: var(--secondary-bg);
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .quote-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .quote-card::before {
-            content: '\201C';
-            position: absolute;
-            top: -20px;
-            left: 10px;
-            font-size: 6rem;
-            color: rgba(95, 158, 160, 0.1);
-            font-family: 'Georgia', serif;
-        }
-
-        .quote-text {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-            position: relative;
-            z-index: 1;
-        }
-
-        .quote-attribution {
-            font-style: italic;
-            font-size: 0.9rem;
-            color: var(--accent-color);
-            text-align: right;
-            margin-bottom: 0.8rem;
-        }
-
-        /* Quote Tags */
-        .quote-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .quote-tag {
-            font-size: 0.8rem;
-            padding: 0.2rem 0.6rem;
-            border-radius: 15px;
-            background-color: rgba(95, 158, 160, 0.1);
-            color: var(--accent-color);
-        }
-    </style>
-</head>
-
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-brand">
-            <a href="../index.html"><h2>Saksham Sharma</h2></a>
-            <span id="theme-toggle" class="theme-toggle"><i class="fas fa-sun"></i></span>
-            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
-                <i class="fas fa-bars"></i>
-            </button>
+<!-- Quotes Container -->
+<div class="quotes-container">
+    <!-- Quote 1 -->
+    <div class="quote-card" data-tags="wisdom philosophy">
+        <p class="quote-text">Knowing is not enough; we must apply.</p>
+        <p class="quote-attribution">— Johann Wolfgang von Goethe</p>
+        <div class="quote-tags">
+            <span class="quote-tag tag-wisdom">Wisdom</span>
+            <span class="quote-tag tag-philosophy">Philosophy</span>
         </div>
-        <div class="nav-links">
-            <div class="nav-menu-header">
-                <h2 class="nav-menu-title">Navigate to:</h2>
-            </div>
-            <a href="../index.html" class="nav-link">Home</a>
-            <a href="quotes.html" class="nav-link active">Quotes</a>
-            <a href="writings.html" class="nav-link">Writings</a>
-            <a href="thoughts.html" class="nav-link">Thoughts</a>
-            <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+
+    <!-- Quote 2 -->
+    <div class="quote-card" data-tags="lol life">
+        <p class="quote-text">You don't need a parachute to skydive. You only need it if you want to skydive again.</p>
+        <p class="quote-attribution">— Fish in Bad Mood</p>
+        <div class="quote-tags">
+            <span class="quote-tag tag-lol">LOL</span>
+            <span class="quote-tag tag-life">Life</span>
         </div>
-    </nav>
+    </div>
 
-    <!-- Main Content -->
-    <main class="content">
-        <header class="page-header">
-            <h1 class="page-title">Fishy's Quotes Collection</h1>
-            <p class="page-description">I tried to collect some of my favorite quotes and thoughts. Check them out!</p>
-        </header>
-
-        <!-- Tag Filters -->
-        <div class="tag-filters">
-            <button class="tag-filter active" data-tag="all">All</button>
-            <button class="tag-filter" data-tag="philosophy">Philosophy</button>
-            <button class="tag-filter" data-tag="raw">Raw Thoughts</button>
-            <button class="tag-filter" data-tag="life">Life</button>
-            <button class="tag-filter" data-tag="wisdom">Wisdom</button>
-            <button class="tag-filter" data-tag="nature">Nature</button>
-            <button class="tag-filter" data-tag="mindblowing">Mind Blowing</button>
-            <button class="tag-filter" data-tag="science">Science</button>
-            <button class="tag-filter" data-tag="death">Death</button>
-            <button class="tag-filter" data-tag="divinity">Divinity</button>
-            <button class="tag-filter" data-tag="humanity">Humanity</button>
-            <button class="tag-filter" data-tag="lol">LOL</button>
+    <!-- Quote 3 -->
+    <div class="quote-card" data-tags="raw love">
+        <p class="quote-text">I had never met a soul who could speak my language, until I met you. You're fluent in me.</p>
+        <p class="quote-attribution">— Mysterious Fish</p>
+        <div class="quote-tags">
+            <span class="quote-tag tag-raw">Raw</span>
+            <span class="quote-tag tag-love">Love</span>
         </div>
+    </div>
 
-        <!-- Quotes Container -->
-        <div class="quotes-container">
-            <!-- Quote 1 -->
-            <div class="quote-card" data-tags="philosophy wisdom">
-                <p class="quote-text">The unexamined life is not worth living.</p>
-                <p class="quote-attribution">— Socrates</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-philosophy">Philosophy</span>
-                    <span class="quote-tag tag-wisdom">Wisdom</span>
-                </div>
-            </div>
-
-            <!-- Quote 2 -->
-            <div class="quote-card" data-tags="raw mindblowing">
-                <p class="quote-text">Sometimes I wonder if my thoughts are truly my own or just echoes of things I've consumed throughout my life.</p>
-                <p class="quote-attribution">— My random thought</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-raw">Raw</span>
-                    <span class="quote-tag tag-mindblowing">Mind Blowing</span>
-                </div>
-            </div>
-
-            <!-- Quote 3 -->
-            <div class="quote-card" data-tags="life wisdom">
-                <p class="quote-text">In three words I can sum up everything I've learned about life: it goes on.</p>
-                <p class="quote-attribution">— Robert Frost</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-life">Life</span>
-                    <span class="quote-tag tag-wisdom">Wisdom</span>
-                </div>
-            </div>
-
-            <!-- Quote 4 -->
-            <div class="quote-card" data-tags="nature philosophy">
-                <p class="quote-text">Look deep into nature, and then you will understand everything better.</p>
-                <p class="quote-attribution">— Albert Einstein</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-nature">Nature</span>
-                    <span class="quote-tag tag-philosophy">Philosophy</span>
-                </div>
-            </div>
-
-            <!-- Quote 5 -->
-            <div class="quote-card" data-tags="lol">
-                <p class="quote-text">The best time to plant a tree was 10 years ago, the second best time is now!</p>
-                <p class="quote-attribution">— Unknown</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-nature">Nature</span>
-                    <span class="quote-tag tag-philosophy">Philosophy</span>
-                </div>
-            </div>
-
-            <!-- Quote 6 -->
-            <div class="quote-card" data-tags="mindblowing philosophy">
-                <p class="quote-text">We are all in the gutter, but some of us are looking at the stars.</p>
-                <p class="quote-attribution">— Oscar Wilde</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-mindblowing">Mind Blowing</span>
-                    <span class="quote-tag tag-philosophy">Philosophy</span>
-                </div>
-            </div>
-
-            <!-- Quote 7 -->
-            <div class="quote-card" data-tags="raw life">
-                <p class="quote-text">The pressure to be extraordinary often keeps us from appreciating the beauty of being ordinary.</p>
-                <p class="quote-attribution">— My reflection</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-raw">Raw</span>
-                    <span class="quote-tag tag-life">Life</span>
-                </div>
-            </div>
-
-            <!-- Quote 8 -->
-            <div class="quote-card" data-tags="wisdom life">
-                <p class="quote-text">It is not the strongest of the species that survive, nor the most intelligent, but the one most responsive to change.</p>
-                <p class="quote-attribution">— Charles Darwin</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-wisdom">Wisdom</span>
-                    <span class="quote-tag tag-life">Life</span>
-                </div>
-            </div>
-
-            <!-- Quote 9 -->
-            <div class="quote-card" data-tags="lol raw">
-                <p class="quote-text">Every time I try to eat healthy, a chocolate bar looks at me and snickers.</p>
-                <p class="quote-attribution">— My food diary</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-lol">LOL</span>
-                    <span class="quote-tag tag-raw">Raw</span>
-                </div>
-            </div>
-
-            <!-- Quote 10 -->
-            <div class="quote-card" data-tags="nature mindblowing">
-                <p class="quote-text">In every walk with nature one receives far more than he seeks.</p>
-                <p class="quote-attribution">— John Muir</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-nature">Nature</span>
-                    <span class="quote-tag tag-mindblowing">Mind Blowing</span>
-                </div>
-            </div>
-
-            <!-- Quote 11 -->
-            <div class="quote-card" data-tags="philosophy wisdom">
-                <p class="quote-text">The only true wisdom is in knowing you know nothing.</p>
-                <p class="quote-attribution">— Socrates</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-philosophy">Philosophy</span>
-                    <span class="quote-tag tag-wisdom">Wisdom</span>
-                </div>
-            </div>
-
-            <!-- Quote 12 -->
-            <div class="quote-card" data-tags="raw mindblowing">
-                <p class="quote-text">What if our dreams are glimpses into parallel universes where we made different choices?</p>
-                <p class="quote-attribution">— 3 AM thought</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-raw">Raw</span>
-                    <span class="quote-tag tag-mindblowing">Mind Blowing</span>
-                </div>
-            </div>
-
-            <!-- NEW QUOTES -->
-
-            <!-- Quote 13 -->
-            <div class="quote-card" data-tags="life wisdom">
-                <p class="quote-text">Life is what happens when you're busy making other plans.</p>
-                <p class="quote-attribution">— John Lennon</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-life">Life</span>
-                    <span class="quote-tag tag-wisdom">Wisdom</span>
-                </div>
-            </div>
-
-            <!-- Quote 14 -->
-            <div class="quote-card" data-tags="death philosophy">
-                <p class="quote-text">Death is not the greatest loss in life. The greatest loss is what dies inside us while we live.</p>
-                <p class="quote-attribution">— Norman Cousins</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-death">Death</span>
-                    <span class="quote-tag tag-philosophy">Philosophy</span>
-                </div>
-            </div>
-
-            <!-- Quote 15 -->
-            <div class="quote-card" data-tags="divinity wisdom">
-                <p class="quote-text">The function of prayer is not to influence God, but rather to change the nature of the one who prays.</p>
-                <p class="quote-attribution">— Søren Kierkegaard</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-divinity">Divinity</span>
-                    <span class="quote-tag tag-wisdom">Wisdom</span>
-                </div>
-            </div>
-
-            <!-- Quote 16 -->
-            <div class="quote-card" data-tags="humanity wisdom">
-                <p class="quote-text">No one is born hating another person because of the color of his skin, or his background, or his religion.</p>
-                <p class="quote-attribution">— Nelson Mandela</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-humanity">Humanity</span>
-                    <span class="quote-tag tag-wisdom">Wisdom</span>
-                </div>
-            </div>
-
-            <!-- Quote 17 -->
-            <div class="quote-card" data-tags="humanity philosophy">
-                <p class="quote-text">The sole meaning of life is to serve humanity.</p>
-                <p class="quote-attribution">— Leo Tolstoy</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-humanity">Humanity</span>
-                    <span class="quote-tag tag-philosophy">Philosophy</span>
-                </div>
-            </div>
-
-            <!-- Quote 18 -->
-            <div class="quote-card" data-tags="science mindblowing">
-                <p class="quote-text">The good thing about science is that it's true whether or not you believe in it.</p>
-                <p class="quote-attribution">— Neil deGrasse Tyson</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-science">Science</span>
-                    <span class="quote-tag tag-mindblowing">Mind Blowing</span>
-                </div>
-            </div>
-
-            <!-- Quote 19 -->
-            <div class="quote-card" data-tags="science divinity">
-                <p class="quote-text">Science without religion is lame, religion without science is blind.</p>
-                <p class="quote-attribution">— Albert Einstein</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-science">Science</span>
-                    <span class="quote-tag tag-divinity">Divinity</span>
-                </div>
-            </div>
-
-            <!-- Quote 20 -->
-            <div class="quote-card" data-tags="science mindblowing">
-                <p class="quote-text">The most beautiful thing we can experience is the mysterious. It is the source of all true art and science.</p>
-                <p class="quote-attribution">— Albert Einstein</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-science">Science</span>
-                    <span class="quote-tag tag-mindblowing">Mind Blowing</span>
-                </div>
-            </div>
-
-            <!-- Quote 21 -->
-            <div class="quote-card" data-tags="life philosophy">
-                <p class="quote-text">He who has a why to live for can bear almost any how.</p>
-                <p class="quote-attribution">— Friedrich Nietzsche</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-life">Life</span>
-                    <span class="quote-tag tag-philosophy">Philosophy</span>
-                </div>
-            </div>
-
-            <!-- Quote 22 -->
-            <div class="quote-card" data-tags="humanity divinity">
-                <p class="quote-text">We are not human beings having a spiritual experience. We are spiritual beings having a human experience.</p>
-                <p class="quote-attribution">— Pierre Teilhard de Chardin</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-humanity">Humanity</span>
-                    <span class="quote-tag tag-divinity">Divinity</span>
-                </div>
-            </div>
-
-            <!-- Quote 23 -->
-            <div class="quote-card" data-tags="death wisdom">
-                <p class="quote-text">To the well-organized mind, death is but the next great adventure.</p>
-                <p class="quote-attribution">— Albus Dumbledore (J.K. Rowling)</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-death">Death</span>
-                    <span class="quote-tag tag-wisdom">Wisdom</span>
-                </div>
-            </div>
-
-            <!-- Quote 24 -->
-            <div class="quote-card" data-tags="humanity philosophy">
-                <p class="quote-text">You must not lose faith in humanity. Humanity is like an ocean; if a few drops of the ocean are dirty, the ocean does not become dirty.</p>
-                <p class="quote-attribution">— Mahatma Gandhi</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-humanity">Humanity</span>
-                    <span class="quote-tag tag-philosophy">Philosophy</span>
-                </div>
-            </div>
-
-            <!-- Quote 25 -->
-            <div class="quote-card" data-tags="death life">
-                <p class="quote-text">Life is pleasant. Death is peaceful. It's the transition that's troublesome.</p>
-                <p class="quote-attribution">— Isaac Asimov</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-death">Death</span>
-                    <span class="quote-tag tag-life">Life</span>
-                </div>
-            </div>
-
-            <!-- Quote 26 -->
-            <div class="quote-card" data-tags="divinity mindblowing">
-                <p class="quote-text">The universe is not only stranger than we imagine, it is stranger than we can imagine.</p>
-                <p class="quote-attribution">— Sir Arthur Eddington</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-divinity">Divinity</span>
-                    <span class="quote-tag tag-mindblowing">Mind Blowing</span>
-                </div>
-            </div>
-
-            <!-- Quote 27 -->
-            <div class="quote-card" data-tags="science nature">
-                <p class="quote-text">In all things of nature there is something of the marvelous.</p>
-                <p class="quote-attribution">— Aristotle</p>
-                <div class="quote-tags">
-                    <span class="quote-tag tag-science">Science</span>
-                    <span class="quote-tag tag-nature">Nature</span>
-                </div>
-            </div>
-            <!-- Quote 28 and many more -->
+    <!-- Quote 4 -->
+    <div class="quote-card" data-tags="lol life">
+        <p class="quote-text">If life shuts a door, open it again. It's a door; that's how they work.</p>
+        <p class="quote-attribution">— Hilarious Fish</p>
+        <div class="quote-tags">
+            <span class="quote-tag tag-lol">LOL</span>
+            <span class="quote-tag tag-life">Life</span>
         </div>
-    </main>
+    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <!-- Elfsight Subscription Form | Untitled Subscription Form -->
-            <script src="https://static.elfsight.com/platform/platform.js" async></script>
-            <div class="elfsight-app-a3279f79-5e02-425b-a8f4-ff12ecfbb964" data-elfsight-app-lazy></div>
-            <p>&copy; 2025 Saksham Sharma | All rights reserved.</p>
-            <p><small>Visit my <a href="https://saksham.info.np" style="color: var(--highlight-color);">professional website</a></small></p>
+    <!-- Quote 5 -->
+    <div class="quote-card" data-tags="wisdom raw">
+        <p class="quote-text">Keep making mistakes until you don’t!</p>
+        <p class="quote-attribution">— Elite Fish</p>
+        <div class="quote-tags">
+            <span class="quote-tag tag-wisdom">Wisdom</span>
+            <span class="quote-tag tag-raw">Raw</span>
         </div>
-    </footer>
+    </div>
 
-    <!-- Common JavaScript -->
-    <script src="../js/main.js"></script>
-    
-    <!-- Quote filtering script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Quote Filtering
-            const tagFilters = document.querySelectorAll('.tag-filter');
-            const quoteCards = document.querySelectorAll('.quote-card');
-            
-            tagFilters.forEach(filter => {
-                filter.addEventListener('click', function() {
-                    // Remove active class from all filters
-                    tagFilters.forEach(f => f.classList.remove('active'));
-                    
-                    // Add active class to clicked filter
-                    this.classList.add('active');
-                    
-                    const selectedTag = this.getAttribute('data-tag');
-                    
-                    // Show all quotes if 'all' is selected
-                    if (selectedTag === 'all') {
-                        quoteCards.forEach(card => {
-                            card.style.display = 'block';
-                        });
-                    } else {
-                        // Filter quotes by selected tag
-                        quoteCards.forEach(card => {
-                            const cardTags = card.getAttribute('data-tags').split(' ');
-                            
-                            if (cardTags.includes(selectedTag)) {
-                                card.style.display = 'block';
-                            } else {
-                                card.style.display = 'none';
-                            }
-                        });
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+    <!-- Quote 6 -->
+    <div class="quote-card" data-tags="raw humanity">
+        <p class="quote-text">If you remember me, then I don't care if everyone else forgets me.</p>
+        <p class="quote-attribution">— Haruki Murakami</p>
+        <div class="quote-tags">
+            <span class="quote-tag tag-raw">Raw</span>
+            <span class="quote-tag tag-humanity">Humanity</span>
+        </div>
+    </div>
+
+    <!-- Quote 7 -->
+    <div class="quote-card" data-tags="lol raw">
+        <p class="quote-text">Looking smart, because I am!</p>
+        <p class="quote-attribution">— Albert Einstein</p>
+        <div class="quote-tags">
+            <span class="quote-tag tag-lol">LOL</span>
+            <span class="quote-tag tag-raw">Raw</span>
+        </div>
+    </div>
+
+    <!-- Quote 8 -->
+    <div class="quote-card" data-tags="lol wisdom">
+        <p class="quote-text">War does not determine who is right—only who is left.</p>
+        <p class="quote-attribution">— Bertrand Russell</p>
+        <div class="quote-tags">
+            <span class="quote-tag tag-lol">LOL</span>
+            <span class="quote-tag tag-wisdom">Wisdom</span>
+        </div>
+    </div>
+
+    <!-- Quote 9 -->
+    <div class="quote-card" data-tags="life raw">
+        <p class="quote-text">Every blind person, when they gain vision, abandons their stick first.</p>
+        <p class="quote-attribution">— Rumored</p>
+        <div class="quote-tags">
+            <span class="quote-tag tag-life">Life</span>
+            <span class="quote-tag tag-raw">Raw</span>
+        </div>
+    </div>
+
+    <!-- Quote 10 -->
+    <div class="quote-card" data-tags="humanity mindblowing">
+        <p class="quote-text">I will remain.</p>
+        <p class="quote-attribution">— He Who Remains</p>
+        <div class="quote-tags">
+            <span class="quote-tag tag-humanity">Humanity</span>
+            <span class="quote-tag tag-mindblowing">Mind Blowing</span>
+        </div>
+    </div>
+
+    <!-- Quote 11 -->
+    <div class="quote-card" data-tags="lol raw">
+        <p class="quote-text">How do I know that you are blind? Do you see that sign over there? Yes! Well, I don't see it... lol</p>
+        <p class="quote-attribution">— UnExplainableFish52</p>
+        <div class="quote-tags">
+            <span class="quote-tag tag-lol">LOL</span>
+            <span class="quote-tag tag-raw">Raw</span>
+        </div>
+    </div>
+
+    <!-- Quote 12 -->
+    <div class="quote-card" data-tags="lol mindblowing">
+        <p class="quote-text">What becomes shorter when you add two letters to it? SHORT!</p>
+        <p class="quote-attribution">— Classic Riddle</p>
+        <div class="quote-tags">
+            <span class="quote-tag tag-lol">LOL</span>
+            <span class="quote-tag tag-mindblowing">Mind Blowing</span>
+        </div>
+    </div>
+
+    <!-- Quote 13 -->
+    <div class="quote-card" data-tags="wisdom life">
+        <p class="quote-text">It is never too late to do the right thing.</p>
+        <p class="quote-attribution">— Martin Luther King Jr.</p>
+        <div class="quote-tags">
+            <span class="quote-tag tag-wisdom">Wisdom</span>
+            <span class="quote-tag tag-life">Life</span>
+        </div>
+    </div>
+
+    <!-- Quote 14 -->
+    <div class="quote-card" data-tags="lol culture">
+        <p class="quote-text">A wise Chinese man once said: “我是中国人，当然我说中文。” (‘I am Chinese, obviously I speak in Mandarin.’)</p>
+        <p class="quote-attribution">— A Wise Chinese Man</p>
+        <div class="quote-tags">
+            <span class="quote-tag tag-lol">LOL</span>
+            <span class="quote-tag tag-culture">Culture</span>
+        </div>
+    </div>
+
+    <!-- Quote 15 -->
+    <div class="quote-card" data-tags="wisdom philosophy">
+        <p class="quote-text">He who knows does not speak; he who speaks does not know.</p>
+        <p class="quote-attribution">— Lao Tzu</p>
+        <div class="quote-tags">
+            <span class="quote-tag tag-wisdom">Wisdom</span>
+            <span class="quote-tag tag-philosophy">Philosophy</span>
+        </div>
+    </div>
+
+    <!-- Quote 16 -->
+    <div class="quote-card" data-tags="lol mindblowing">
+        <p class="quote-text">Every 60 seconds in Africa, a minute passes.</p>
+        <p class="quote-attribution">— Xavier</p>
+        <div class="quote-tags">
+            <span class="quote-tag tag-lol">LOL</span>
+            <span class="quote-tag tag-mindblowing">Mind Blowing</span>
+        </div>
+    </div>
+
+    <!-- Quote 17 -->
+    <div class="quote-card" data-tags="science wisdom">
+        <p class="quote-text">If I had one hour to solve a problem, I'd spend 55 minutes thinking about the problem and 5 minutes solving it.</p>
+        <p class="quote-attribution">— Albert Einstein</p>
+        <div class="quote-tags">
+            <span class="quote-tag tag-science">Science</span>
+            <span class="quote-tag tag-wisdom">Wisdom</span>
+        </div>
+    </div>
+</div>
