@@ -516,6 +516,7 @@ body {
 .writing-card {
     background-color: var(--secondary-bg);
     border-radius: 12px;
+    border: 2px solid rgb(14, 211, 211);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -523,8 +524,9 @@ body {
 }
 
 .writing-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 206, 209, 0.2);
+    box-shadow: 0 16px 36px #13d4df22, 0 4px 12px #13d4df13;
+    border-color: #13d4df;
+    transform: translateY(-4px) scale(1.025);
 }
 
 .writing-card.coming-soon {
