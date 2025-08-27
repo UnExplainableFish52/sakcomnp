@@ -525,7 +525,7 @@ body {
 
 .writing-card:hover {
     box-shadow: 0 16px 36px #13d4df22, 0 4px 12px #13d4df13;
-    border-color: #13d4df;
+    border-color: #ccff00;
     transform: translateY(-4px) scale(1.025);
 }
 
