@@ -35,6 +35,8 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     cursor: default;
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 /* ==========================================================================
