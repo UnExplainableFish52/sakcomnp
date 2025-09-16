@@ -872,6 +872,14 @@ textarea.form-control {
 
 /* Contact Page Responsive Design */
 @media (max-width: 768px) {
+    html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    box-sizing: border-box;
+}
+
     .contact-container {
         grid-template-columns: 1fr;
         gap: 2rem;

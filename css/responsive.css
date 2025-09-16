@@ -3,6 +3,10 @@
     /* Navigation */
     .navbar {
         padding: 0.3rem 1rem;
+        width: 100vw;
+        left: 0;
+        right: 0;
+        box-sizing: border-box;
     }
     
     .mobile-menu-toggle {
