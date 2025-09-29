@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loki's Neon RGB Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&display=swap');
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #000; /* Full pitch dark */
+      color: #fff;
+      font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .neon-card {
+      display: flex;
+      flex-direction: row;
+      max-width: 650px;
+      width: 95vw;
+      background: #0a0a0a;
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      padding: 0;
+      /* NEON RGB BREATHING BORDER */
+      border: 4px solid transparent;
+      animation: rgb-border 7s linear infinite;
+      box-shadow: 0 0 60px 10px #111, 0 0 12px 2px #000;
+    }
+
+    @keyframes rgb-border {
+      0%   { box-shadow: 0 0 0 4px #ff0000, 0 0 20px 10px #ff000044, 0 0 60px 10px #111; border-color: #ff0000; }
+      17%  { box-shadow: 0 0 0 4px #ff9900, 0 0 20px 10px #ff990044, 0 0 60px 10px #111; border-color: #ff9900; }
+      34%  { box-shadow: 0 0 0 4px #ffff00, 0 0 20px 10px #ffff0044, 0 0 60px 10px #111; border-color: #ffff00; }
+      51%  { box-shadow: 0 0 0 4px #00ff00, 0 0 20px 10px #00ff0044, 0 0 60px 10px #111; border-color: #00ff00; }
+      68%  { box-shadow: 0 0 0 4px #00ffff, 0 0 20px 10px #00ffff44, 0 0 60px 10px #111; border-color: #00ffff; }
+      85%  { box-shadow: 0 0 0 4px #0000ff, 0 0 20px 10px #0000ff44, 0 0 60px 10px #111; border-color: #0000ff; }
+      100% { box-shadow: 0 0 0 4px #ff00ff, 0 0 20px 10px #ff00ff44, 0 0 60px 10px #111; border-color: #ff00ff; }
+    }
+
+    .left {
+      background: #111;
+      min-width: 220px;
+      width: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 36px 20px;
+      border-right: 2px solid #222;
+      box-shadow: 0 0 40px 0 #111 inset;
+    }
+    .profile-pic-container {
+      width: 150px;
+      height: 150px;
+      background: #181818;
+      border-radius: 18px;
+      overflow: hidden;
+      margin-bottom: 24px;
+      box-shadow: 0 0 48px 6px #000;
+      position: relative;
+      transition: transform .3s;
+      border: 3px solid #232323;
+    }
+    .profile-pic-container:hover {
+      transform: scale(1.08) rotate(-2deg);
+      box-shadow: 0 0 80px 12px #000;
+      border-color: #fff;
+    }
+    .profile-pic {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(1.1) contrast(1.2) grayscale(0.1) drop-shadow(0 0 22px #09f9);
+    }
+
+    .effects {
+      position: absolute;
+      top: 18px; left: 18px; right: 18px; bottom: 18px;
+      pointer-events: none;
+      z-index: 2;
+      background: repeating-linear-gradient(135deg, #fff2 0 2px, #fff1 2px 6px);
+      mix-blend-mode: lighten;
+      opacity: .11;
+    }
+
+    .gamer-vibes {
+      margin-top: 12px;
+      font-size: 1.1em;
+      color: #fff;
+      text-shadow: 0 0 9px #0ff, 0 0 2px #f0f;
+      font-family: 'Orbitron', monospace;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff, #ff0000);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: neon-vibes 5s linear infinite;
+    }
+    @keyframes neon-vibes {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
+    .right {
+      flex: 1;
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #0a0a0a;
+    }
+
+    .name {
+      font-size: 2.4em;
+      font-weight: 800;
+      letter-spacing: 1px;
+      font-family: 'Orbitron', monospace;
+      margin-bottom: 8px;
+      background: linear-gradient(90deg,#ff0000,#00ff00,#0000ff,#ff00ff,#ff0000);
+      background-size: 300% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rgb-text 6s linear infinite;
+      text-shadow: 0 0 12px #fff1, 0 0 4px #000;
+    }
+    @keyframes rgb-text {
+      0% {background-position:0 50%;}
+      100% {background-position:100% 50%;}
+    }
+
+    .stats {
+      margin-bottom: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .stat-row {
+      display: flex;
+      align-items: center;
+      font-size: 1.13em;
+    }
+    .stat-label {
+      color: #fff;
+      margin-right: 10px;
+      min-width: 80px;
+      font-family: 'Orbitron', monospace;
+      font-weight: 600;
+      letter-spacing: 1px;
+      opacity: 0.8;
+    }
+    .stat-value {
+      color: #fff;
+      font-weight: 500;
+      text-shadow: 0 0 6px #09f7;
+    }
+
+    .interests {
+      margin-bottom: 20px;
+    }
+    .interests-title {
+      color: #fff;
+      font-size: 1.1em;
+      letter-spacing: 1px;
+      font-family: 'Orbitron', monospace;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #fff2;
+    }
+    .interest-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .tag {
+      background: #000;
+      color: #fff;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 16px;
+      font-family: 'Orbitron', monospace;
+      font-size: .97em;
+      border: 2px solid;
+      border-image: linear-gradient(90deg,#ff0000,#00ff00,#0000ff,#ff0000) 1;
+      box-shadow: 0 0 13px #111;
+      outline: none;
+      cursor: pointer;
+      opacity: 0.93;
+      transition: background .24s, border-color .24s;
+      animation: tag-rgb-border 3s linear infinite;
+    }
+    @keyframes tag-rgb-border {
+      0%   { border-color: #ff0000;}
+      33%  { border-color: #00ff00;}
+      66%  { border-color: #0000ff;}
+      100% { border-color: #ff0000;}
+    }
+    .tag:hover {
+      background: #111;
+      color: #fff;
+      opacity: 1;
+      border-color: #fff;
+      box-shadow: 0 0 18px #fff2;
+    }
+
+    /* Age Bar */
+    .age-bar-container {
+      margin-top: 10px;
+      margin-bottom: 16px;
+      width: 100%;
+    }
+    .age-label {
+      color: #fff;
+      font-size: 1em;
+      font-family: 'Orbitron', monospace;
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: block;
+      opacity: 0.85;
+    }
+    .age-bar-bg {
+      background: #181818;
+      border-radius: 8px;
+      width: 100%;
+      height: 22px;
+      box-shadow: 0 0 12px #000c, 0 0 6px #222c;
+      position: relative;
+      overflow: hidden;
+    }
+    .age-bar {
+      background: linear-gradient(90deg,#ff0000,#00ff00,#0000ff,#ff00ff,#ff0000);
+      background-size: 250% 100%;
+      animation: rgb-bar 5s linear infinite;
+      width: 63%; /* 20 out of 32 */
+      height: 100%;
+      border-radius: 8px 0 0 8px;
+      box-shadow: 0 0 14px #fff3;
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 12px;
+      font-family: 'Orbitron', monospace;
+      font-size: 1em;
+      color: #fff;
+      font-weight: 700;
+      text-shadow: 0 0 4px #fff8;
+      transition: width .7s cubic-bezier(.7,0,.2,1);
+    }
+    @keyframes rgb-bar {
+      0% {background-position:0 0;}
+      100% {background-position:100% 0;}
+    }
+    .age-num {
+      position: absolute;
+      right: 10px;
+      top: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      font-family: 'Orbitron', monospace;
+      font-weight: 800;
+      font-size: 1em;
+      text-shadow: 0 0 8px #fff;
+    }
+    /* Responsive */
+    @media (max-width: 650px) {
+      .neon-card {
+        flex-direction: column;
+        max-width: 98vw;
+      }
+      .left, .right {
+        min-width: 0;
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #222;
+      }
+      .left {
+        padding: 26px 0 12px 0;
+      }
+      .right {
+        padding: 18px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="neon-card">
+    <div class="left">
+      <div class="profile-pic-container">
+        <!-- Replace with your photo URL if desired -->
+        <img src="https://avatars.githubusercontent.com/u/143405183?v=4" alt="Loki's photo" class="profile-pic">
+        <div class="effects"></div>
+      </div>
+      <div class="gamer-vibes">⚡ Gamer Vibes ⚡</div>
+    </div>
+    <div class="right">
+      <div>
+        <div class="name">Loki</div>
+        <div class="stats">
+          <div class="stat-row">
+            <span class="stat-label">Status:</span>
+            <span class="stat-value">Aspiring Software Engineer</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Location:</span>
+            <span class="stat-value">🌍 Earth, Arch Linux & Win11</span>
+          </div>
+        </div>
+        <div class="interests">
+          <div class="interests-title">Interests & Domains</div>
+          <div class="interest-tags">
+            <span class="tag">Web Dev</span>
+            <span class="tag">ReactJS</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Gaming</span>
+            <span class="tag">CS & Algorithms</span>
+            <span class="tag">Terminal Wizardry</span>
+            <span class="tag">Photography</span>
+            <!-- Add/remove interests as needed -->
+          </div>
+        </div>
+        <div class="age-bar-container">
+          <span class="age-label">Age</span>
+          <div class="age-bar-bg">
+            <div class="age-bar" style="width: 63%;">20</div>
+            <span class="age-num">20</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

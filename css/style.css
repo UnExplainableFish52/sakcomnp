@@ -51,6 +51,8 @@ body {
     border-bottom: 1px solid var(--highlight-color);
     position: sticky;
     top: 0;
+    min-height: 7vh;
+    height: 7vh;
     z-index: 100;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -187,6 +189,10 @@ body {
 @keyframes marquee {
     0% { transform: translate(0, 0); }
     100% { transform: translate(-100%, 0); }
+}
+/* Responsive  */
+@media (max-width: 768px) {
+    
 }
 
 /* ==========================================================================

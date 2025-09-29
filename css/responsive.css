@@ -7,6 +7,9 @@
         left: 0;
         right: 0;
         box-sizing: border-box;
+        height: 7vh;
+        min-height: 6vh;
+        position: fixed;
     }
     
     .mobile-menu-toggle {
