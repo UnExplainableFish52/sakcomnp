@@ -6,6 +6,7 @@
         width: 100vw;
         left: 0;
         right: 0;
+        margin: auto;
         box-sizing: border-box;
         height: 7vh;
         min-height: 6vh;
