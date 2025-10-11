@@ -3,16 +3,31 @@
   "short_name": "Loki",
   "description": "Explore Loki's philosophies and thoughts",
   "icons": [
-    {
-      "src": "/images/loki512.jpg",
-      "sizes": "512x512",
-      "type": "image/jpeg"
-    },
-    {
-      "src": "/images/loki.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
-    }
+  {
+    "src": "/loki16.png",
+    "sizes": "16x16",
+    "type": "image/png"
+  },
+  {
+    "src": "/loki32.png",
+    "sizes": "32x32",
+    "type": "image/png"
+  },
+  {
+    "src": "/loki192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  },
+  {
+    "src": "/loki512.jpg",
+    "sizes": "512x512",
+    "type": "image/jpeg"
+  },
+  {
+    "src": "/loki.svg",
+    "sizes": "any",
+    "type": "image/svg+xml"
+  }
   ],
   "theme_color": "#00bcd4",  
   "background_color": "#222831", 
