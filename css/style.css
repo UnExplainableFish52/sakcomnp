@@ -28,6 +28,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    font-size: 16px;
+    /* kinda useless but as a good practice keeping it here */
+}
 
 body {
     font-family: 'Roboto Slab', serif;
@@ -59,6 +63,7 @@ body {
 .nav-brand {
     display: flex;
     align-items: center;
+    height: 100%;
     gap: 0.75rem;
 }
 
