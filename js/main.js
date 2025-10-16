@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const iconElement = themeToggle.querySelector('i');
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-    
     // Check if user previously set a theme preference
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
@@ -116,4 +115,39 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    window.addEventListener('appinstalled', () => {
+        console.log('PWA installed successfully');
+    });
 });
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+                console.log('Service worker registered:', registration.scope);
+
+                if (registration.waiting) {
+                    registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+                }
+
+                registration.addEventListener('updatefound', () => {
+                    const newWorker = registration.installing;
+
+                    if (!newWorker) {
+                        return;
+                    }
+
+                    newWorker.addEventListener('statechange', () => {
+                        if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                            newWorker.postMessage({ type: 'SKIP_WAITING' });
+                            console.log('New service worker installed, activating immediately.');
+                        }
+                    });
+                });
+            })
+            .catch(error => {
+                console.error('Service worker registration failed:', error);
+            });
+    });
+}
